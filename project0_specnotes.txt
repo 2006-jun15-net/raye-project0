@@ -21,7 +21,7 @@ Select from menu:
 3) Customer
 
 Forms:
-1) Executive Display and Interaction
+1) Executive Display and Interaction (optional)
 2) Manager Display and Interaction
 3) Employee Display and Interaction
 4) Customer Display and Interaction
