@@ -1,0 +1,28 @@
+Employees
+-Executive (Managers + Create Stores, Create Managers)
+-Managers (Employees + Open/Close stores, Create employees, order inventory, view reports)
+-Employees (Process orders, create customers)
+
+Customers
+first name, last name, preferred store, address, zip, e-mail, phone, list of previous orders (Can place new orders)
+
+Stores
+number, address, phone number, website, e-mail, manager, inventory, sales goal, order history
+
+Products
+id, name, description, price, (inventory quantity), vendor
+
+special deals
+
+Console:
+Select from menu:
+1) Admin/Exec
+2) Manager (& Employee??????)
+3) Customer
+
+Forms:
+1) Executive Display and Interaction (optional)
+2) Manager Display and Interaction
+3) Employee Display and Interaction
+4) Customer Display and Interaction
+
