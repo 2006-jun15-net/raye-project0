@@ -18,6 +18,7 @@ INSERT INTO Corporate.VendorList(VendorIndex,VendorName,VendorStAddress,VendorCi
 	(13,'Finale',NULL,NULL,NULL,NULL,'France','music@composition.com',NULL),
 	(14,'Apple Systems',NULL,NULL,NULL,NULL,'China','apple@apple.com',NULL)
 SET IDENTITY_INSERT Corporate.VendorList OFF
+GO
 
 --Item Inventory
 SET IDENTITY_INSERT Corporate.ItemList ON
@@ -137,6 +138,7 @@ INSERT INTO Corporate.ItemList([ItemIndex],[ItemName],[ItemDescription],[ItemPri
 	(1100,'et netus et','adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus. Cras interdum. Nunc sollicitudin commodo ipsum. 
 		Suspendisse non','$49.38','Apple Systems');
 SET IDENTITY_INSERT Corporate.ItemList OFF
+GO
 
 --Employees
 SET IDENTITY_INSERT Corporate.Employees ON
@@ -168,6 +170,37 @@ INSERT INTO Corporate.Employees([EmployeeId],[FirstName],[MiddleInit],[LastName]
 	(25,'Nicole','Y','Aguirre','Other',2,0,1),
 	(26,'Noelle','G','Riley','Store Associate',6,0,1);
 SET IDENTITY_INSERT Corporate.Employees OFF
+GO
+
+--Employee Details
+INSERT INTO Corporate.EmployeeDetails([EmployeeId],[EmployeeEmail],[EmployeePhone],[EmployeeStAddress],[EmployeeCity],[EmployeeState],[EmployeeZip],[EmployeeSalary]) 
+	VALUES(1,'Aenean.sed@facilisiSed.com','(917) 347-0029','P.O. Box 739, 5685 Sem Av.','Leamington','CO','36763','$85782.17'),
+	(2,'Morbi.neque@eratVivamus.com','(754) 628-2632','Ap #247-5115 Ac Street','Castelmarte','CO','43472','$49176.40'),
+	(3,'orci@rhoncusid.com','(467) 467-1383','674-4943 Magna Street','Salice Salentino','TX','92566','$22099.50'),
+	(4,'montes@quis.net','(980) 607-8684','Ap #800-7491 Ligula St.','Huissen','LA','91457','$29110.22'),
+	(5,'malesuada.malesuada@magnis.net','(687) 327-3250','P.O. Box 913, 7968 Ultrices Street','Limache','CA','40677','$33647.11'),
+	(6,'tristique.senectus@suscipitnonummy.co.uk','(418) 160-4870','P.O. Box 455, 3316 Magna. St.','York','CA','15275','$63075.05'),
+	(7,'dolor.sit@nonummyipsumnon.net','(376) 492-5694','164-7873 Semper, Rd.','Marcinelle','TX','25732','$47260.69'),
+	(8,'tellus.lorem@tempus.org','(719) 203-2950','P.O. Box 305, 6821 Faucibus Rd.','Haut-Ittre','CA','47283','$77862.22'),
+	(9,'eget.volutpat.ornare@IntegermollisInteger.net','(509) 770-4444','7097 Eros. Rd.','Somma Lombardo','CO','66236','$37161.33'),
+	(10,'urna.suscipit.nonummy@felisadipiscing.co.uk','(898) 905-0489','Ap #195-2287 Nisl Av.','Miass','AZ','54456','$75943.67'),
+	(11,'ante.dictum.cursus@metusvitaevelit.co.uk','(681) 647-4696','431-9330 Ligula. St.','Belgorod','LA','26024','$63729.54'),
+	(12,'auctor@eueratsemper.net','(129) 622-4601','Ap #297-2277 Tristique Ave','Bolsward','CA','45349','$73534.28'),
+	(13,'ornare.lectus.justo@acturpisegestas.edu','(907) 764-8097','Ap #606-3869 Vitae, Street','Ternate','CA','60591','$15108.03'),
+	(14,'laoreet.lectus@quisurnaNunc.com','(938) 729-7667','P.O. Box 341, 4263 Fringilla Ave','Phoenix','LA','53576','$72419.50'),
+	(15,'ac.turpis@ligulaDonecluctus.org','(332) 586-6231','Ap #754-9907 Mauris Rd.','Kearny','CO','63119','$99904.29'),
+	(16,'tempus.mauris@Vestibulumaccumsanneque.com','(688) 975-8066','P.O. Box 647, 7537 Est. Avenue','Caldera','TX','25222','$91828.80'),
+	(17,'Integer@ultriciesadipiscing.org','(251) 851-8932','541-6011 Primis Rd.','Armadale','CO','98582','$31971.65'),
+	(18,'nulla@FuscemollisDuis.co.uk','(434) 491-3744','383-4454 Sed Av.','Tourinne','TX','79670','$57788.36'),
+	(19,'aliquet@eget.co.uk','(436) 675-2169','Ap #711-4967 Mi St.','Haren','CO','33816','$94572.26'),
+	(20,'Nam.interdum.enim@Suspendissenonleo.net','(870) 687-7777','Ap #746-2621 Nullam Av.','Jefferson City','TX','29999','$16128.32'),
+	(21,'mollis.dui.in@sedturpis.ca','(540) 317-5565','Ap #391-2903 Pede Rd.','Montgomery','CA','29638','$18437.05'),
+	(22,'aptent.taciti.sociosqu@feugiat.edu','(607) 539-6692','8216 Urna. Av.','Harlingen','LA','12307','$17710.91'),
+	(23,'malesuada.fames@CuraeDonectincidunt.com','(328) 394-6674','P.O. Box 350, 9812 Vestibulum Rd.','Amritsar','CA','55394','$47592.79'),
+	(24,'posuere.cubilia@enim.com','(482) 798-1691','957-8832 Velit Road','Serang','TX','40796','$84591.39'),
+	(25,'odio.Phasellus@Maurisut.edu','(796) 940-0969','604 Fermentum Av.','Raiganj','TX','20373','$23062.89'),
+	(26,'eleifend@seddolorFusce.co.uk','(621) 949-8146','Ap #141-6042 Hendrerit Rd.','Krishnanagar','CO','22652','$34110.24');
+GO
 
 --Stores
 INSERT INTO Corporate.Stores([StoreId],[StoreManager],[StoreStAddress],[StoreCity],[StoreState],[StoreZip]) 
@@ -176,6 +209,7 @@ INSERT INTO Corporate.Stores([StoreId],[StoreManager],[StoreStAddress],[StoreCit
 	(12,4,'588-2223 Nullam Av.','Khanewal','CA','99516'),
 	(13,5,'Ap #470-3897 Ac Rd.','Machilipatnam','CA','74621'),
 	(14,6,'P.O. Box 375, 2099 Ut St.','Korbach','CO','47941')
+GO
 
 --Customers
 SET IDENTITY_INSERT Customer.Customers ON
@@ -200,7 +234,7 @@ INSERT INTO Customer.Customers([CustomerIndex],[FirstName],[LastName],[StreetAdd
 	(18,'Laura','West','Ap #603-6906 Ultricies Street','Sacramento','OR','74769','Cras.dictum@id.net','16420214 -4335','14'),
 	(19,'Lani','Cooke','8346 Et St.','Yeongcheon','TX','10811','Nam.ligula@viverra.org','16400508 -3052','12'),
 	(20,'Carissa','Mathis','Ap #783-5430 Elit Rd.','Neder-Over-Heembeek','OR','21473','Vivamus.euismod@tellus.ca','16640213 -9841','13');
-INSERT INTO Customer.Costumers([CustomerIndex],[FirstName],[LastName],[StreetAddress],[City],[State],[Zip],[Email],[Phone],[PreferredStore]) 
+INSERT INTO Customer.Customers([CustomerIndex],[FirstName],[LastName],[StreetAddress],[City],[State],[Zip],[Email],[Phone],[PreferredStore]) 
 	VALUES(21,'Maia','Barker','454-9899 Pede. Road','Cuccaro Vetere','WA','50972','vitae.risus.Duis@Namligula.org','16691009 -6541','13'),
 	(22,'Roary','Roach','287-3066 Vestibulum Street','Aulnay-sous-Bois','TX','15469','amet.consectetuer.adipiscing@quisturpisvitae.ca',
 		'16420210 -5765','14'),
@@ -223,7 +257,7 @@ INSERT INTO Customer.Costumers([CustomerIndex],[FirstName],[LastName],[StreetAdd
 	(38,'Lucius','Kirk','4720 Massa. Av.','Volokolamsk','FL','28963','ut.erat.Sed@dictumPhasellus.ca','16910304 -7677','10'),
 	(39,'Josephine','Graham','P.O. Box 842, 9680 Posuere Rd.','Enschede','WA','82991','risus@Curabiturdictum.com','16041002 -6827','13'),
 	(40,'Brianna','Clay','362-8102 Non, Rd.','Wonju','TX','86442','ornare@fringilla.co.uk','16420620 -3640','11');
-INSERT INTO Customer.Costumers([CustomerIndex],[FirstName],[LastName],[StreetAddress],[City],[State],[Zip],[Email],[Phone],[PreferredStore]) 
+INSERT INTO Customer.Customers([CustomerIndex],[FirstName],[LastName],[StreetAddress],[City],[State],[Zip],[Email],[Phone],[PreferredStore]) 
 	VALUES(41,'Molly','Miles','P.O. Box 871, 247 Est, Rd.','Drayton Valley','CA','95752','Curabitur@tincidunt.co.uk','16560418 -0355','12'),
 	(42,'Rowan','Suarez','Ap #899-643 Nunc Avenue','Bergen','AZ','40686','Donec@nec.ca','16080204 -5971','14'),
 	(43,'Lacey','Craft','8916 Fusce Street','Vietri di Potenza','TX','49027','placerat.orci@accumsanconvallisante.ca','16740805 -8415','11'),
@@ -246,7 +280,7 @@ INSERT INTO Customer.Costumers([CustomerIndex],[FirstName],[LastName],[StreetAdd
 	(58,'Linus','Maxwell','595-3559 Cubilia St.','Nijkerk','TX','49389','Quisque.nonummy@pharetra.net','16770807 -0003','10'),
 	(59,'Naida','Hardy','P.O. Box 101, 6560 Donec Avenue','Verrebroek','CO','49925','pede@sociisnatoque.edu','16130401 -6809','14'),
 	(60,'Wyatt','Bowers','P.O. Box 265, 2772 Euismod St.','Çarşamba','WA','59051','mauris@posuerecubiliaCurae.com','16331209 -1782','13');
-INSERT INTO Customer.Costumers([CustomerIndex],[FirstName],[LastName],[StreetAddress],[City],[State],[Zip],[Email],[Phone],[PreferredStore]) 
+INSERT INTO Customer.Customers([CustomerIndex],[FirstName],[LastName],[StreetAddress],[City],[State],[Zip],[Email],[Phone],[PreferredStore]) 
 	VALUES(61,'Kaye','Emerson','5683 Ornare Av.','St. Pölten','WA','55902','ipsum.sodales@convallis.org','16310717 -6947','14'),
 	(62,'Thane','Clemons','2824 Velit. Street','North Vancouver','CA','81664','adipiscing.Mauris.molestie@molestieSed.net','16190416 -7226',
 		'10'),
@@ -273,7 +307,7 @@ INSERT INTO Customer.Costumers([CustomerIndex],[FirstName],[LastName],[StreetAdd
 	(78,'Ivana','Holcomb','Ap #691-553 Dictum Ave','Longano','WA','38770','malesuada.malesuada@loremtristique.edu','16431114 -8912','10'),
 	(79,'Ramona','Lee','1505 Vehicula. Road','Beauvechain','OR','89424','pulvinar.arcu@euismodenim.com','16690922 -3569','12'),
 	(80,'Minerva','Burks','Ap #944-2219 Nullam Rd.','Frigento','WA','90360','ut.mi@vehicula.edu','16860519 -9416','13');
-INSERT INTO Customer.Costumers([CustomerIndex],[FirstName],[LastName],[StreetAddress],[City],[State],[Zip],[Email],[Phone],[PreferredStore]) 
+INSERT INTO Customer.Customers([CustomerIndex],[FirstName],[LastName],[StreetAddress],[City],[State],[Zip],[Email],[Phone],[PreferredStore]) 
 	VALUES(81,'Russell','Marsh','5316 Sem Avenue','Ladispoli','FL','18971','ut@etmagnisdis.edu','16850527 -2255','11'),
 	(82,'Dana','Hardy','7556 Mauris Av.','Carbonear','TX','67913','Vestibulum.ante@Aeneangravidanunc.co.uk','16760725 -0110','14'),
 	(83,'Brenna','Buchanan','Ap #724-8712 Auctor Ave','Camarones','CO','89501','mauris@ultricesmauris.co.uk','16630805 -6180','12'),
@@ -297,3 +331,219 @@ INSERT INTO Customer.Costumers([CustomerIndex],[FirstName],[LastName],[StreetAdd
 	(99,'Shafira','Rivers','Ap #451-2807 Cum Av.','Medio Atrato','CA','49343','Nunc@diamluctuslobortis.ca','16920115 -0134','13'),
 	(100,'Evelyn','Head','4359 Lectus Road','San Juan (San Juan de Tibás)','AZ','42714','in.magna@aliquet.com','16290711 -3944','11');
 SET IDENTITY_INSERT Customer.Customers OFF
+GO
+
+--Orders
+SET IDENTITY_INSERT Corporate.Orders ON
+INSERT INTO Corporate.Orders([OrderIndex],[OrderId],[CustomerId],[OrderDateTime],[OrderStatus],[OrderStatusDate]) 
+	VALUES(1,'IU73RF-6217-7DY6',92,'2015-10-04 02:41:59',4,'2021-06-10 18:06:41'),
+	(2,'AL0VBC-6921-1LO1',63,'2016-07-16 02:15:00',2,'2021-03-09 23:28:10'),
+	(3,'TU9HNQ-8177-0PX1',43,'2016-12-07 23:59:23',2,'2019-11-01 19:26:59'),
+	(4,'ZE9CQX-3831-3RZ6',17,'2016-06-28 17:04:23',3,'2020-05-18 23:25:37'),
+	(5,'FM2RKO-8837-2OV9',2,'2018-09-30 08:21:49',2,'2019-12-06 03:34:03'),
+	(6,'VM0CKC-4262-8GX5',6,'2012-06-20 15:04:14',0,'2019-11-19 08:43:39'),
+	(7,'VM8MPB-5610-5FM6',74,'2016-06-01 19:04:12',0,'2020-07-29 10:53:05'),
+	(8,'WG0EXK-6225-8VW2',10,'2013-11-24 23:28:30',3,'2020-03-08 12:25:10'),
+	(9,'QU4UYS-0817-0AK3',13,'2018-07-28 00:07:22',0,'2020-05-19 21:44:16'),
+	(10,'OS4DUB-6205-9UP7',22,'2016-12-25 06:31:32',1,'2019-09-15 17:40:02'),
+	(11,'NJ3TRS-1634-2VA5',99,'2018-09-07 14:01:03',2,'2020-08-17 10:00:04'),
+	(12,'JQ5VPF-0292-3VC5',79,'2014-10-28 01:58:00',1,'2020-03-03 13:55:24'),
+	(13,'JZ3UHH-7061-4IW5',73,'2013-07-26 06:19:18',-1,'2021-01-07 23:46:49'),
+	(14,'BQ8ALO-3701-8AA3',53,'2016-03-20 00:22:07',2,'2021-05-20 10:01:48'),
+	(15,'ZX0GHH-5690-8BV3',97,'2016-04-26 06:18:50',4,'2019-12-15 21:33:57'),
+	(16,'GQ6AAF-6738-0ZD8',64,'2016-04-19 05:09:06',-1,'2020-01-04 04:07:46'),
+	(17,'RG1YGR-8685-3BP7',18,'2013-05-13 10:35:52',4,'2020-05-31 09:28:31'),
+	(18,'MZ1LGO-5301-0EO8',40,'2016-07-27 13:06:38',0,'2020-09-07 10:24:57'),
+	(19,'GA2NNL-3572-8NU6',66,'2018-07-12 14:33:11',0,'2019-09-19 17:53:53'),
+	(20,'PG1FVB-5741-9HE7',51,'2014-09-12 21:35:15',-1,'2021-03-02 15:22:13');
+INSERT INTO Corporate.Orders([OrderIndex],[OrderId],[CustomerId],[OrderDateTime],[OrderStatus],[OrderStatusDate]) 
+	VALUES(21,'CQ9JGN-5233-6NA3',87,'2017-06-02 01:30:32',1,'2020-07-12 06:42:50'),
+	(22,'ZJ1MTH-6443-4TM5',19,'2018-11-16 23:24:49',-1,'2019-09-13 23:59:15'),
+	(23,'OJ5HAL-7058-1GU0',68,'2018-02-06 01:00:30',0,'2020-09-15 02:39:42'),
+	(24,'AP9TTG-4813-9ML4',22,'2014-12-25 15:12:09',0,'2020-05-02 20:55:44'),
+	(25,'CB1OXA-3419-1HM9',7,'2012-12-14 08:19:38',-1,'2020-03-17 02:17:19'),
+	(26,'FP6RCA-4167-1VW3',54,'2013-11-30 03:11:24',3,'2020-10-02 09:22:33'),
+	(27,'WR5GDT-1277-1XW7',65,'2016-05-11 12:46:54',0,'2020-09-30 21:20:48'),
+	(28,'HU9RXC-4933-1HP3',81,'2016-03-13 01:36:07',1,'2021-01-02 12:23:48'),
+	(29,'XD9DJB-8341-5DT6',61,'2012-12-11 04:48:52',4,'2020-08-25 11:36:19'),
+	(30,'WM8FGY-0395-4BW2',26,'2019-02-02 22:13:25',1,'2019-08-03 03:40:25'),
+	(31,'BM5VYT-0854-7DU8',39,'2015-10-13 10:56:19',1,'2019-12-21 10:49:14'),
+	(32,'GD9XTF-9096-5CK8',69,'2018-08-31 08:11:23',3,'2019-11-20 08:32:10'),
+	(33,'OR8YWM-7714-3PD6',45,'2020-04-30 23:31:42',3,'2020-07-10 23:17:54'),
+	(34,'OG3SXA-3491-7SD2',58,'2016-08-12 18:57:22',0,'2020-02-27 17:47:56'),
+	(35,'WB6EAG-2599-2VY7',92,'2018-10-29 17:41:33',1,'2020-05-04 22:33:15'),
+	(36,'BN2HTP-4544-5QY7',23,'2015-04-25 03:51:31',2,'2019-11-03 01:38:59'),
+	(37,'KK1DQC-3541-9NC8',87,'2016-04-07 15:40:58',2,'2020-03-10 02:36:33'),
+	(38,'SM4UPL-5803-8MZ4',25,'2019-03-30 11:18:55',2,'2019-08-30 01:33:06'),
+	(39,'RX0LBY-1957-9ZF2',32,'2015-08-15 18:45:12',4,'2020-06-17 23:24:14'),
+	(40,'KM1MPN-2136-7PJ9',83,'2017-08-12 09:29:12',0,'2020-03-31 16:39:30');
+INSERT INTO Corporate.Orders([OrderIndex],[OrderId],[CustomerId],[OrderDateTime],[OrderStatus],[OrderStatusDate]) 
+	VALUES(41,'KR4NGW-1625-5RN6',93,'2016-05-30 19:27:21',4,'2020-11-17 21:13:21'),
+	(42,'GU7FNS-0388-7YO8',42,'2015-10-05 02:10:15',3,'2020-11-09 01:25:53'),
+	(43,'QF3MDR-7960-8ZL1',71,'2013-02-02 13:48:23',4,'2020-08-18 14:56:24'),
+	(44,'VB1CIL-7038-7MH8',98,'2018-02-14 12:50:27',1,'2020-01-15 21:54:42'),
+	(45,'SF2MWI-4943-2SR5',83,'2017-06-18 08:21:54',1,'2019-09-14 19:57:29'),
+	(46,'MU8WIM-3315-4DE5',5,'2018-04-13 03:56:37',1,'2020-05-01 08:10:03'),
+	(47,'DP3MNS-5848-6RU4',89,'2018-08-03 17:41:04',-1,'2021-01-30 03:04:07'),
+	(48,'RC1QBQ-8990-9UG8',40,'2013-03-28 18:15:09',3,'2019-10-24 10:43:10'),
+	(49,'OC1POE-7513-8XC4',42,'2014-03-04 07:29:21',4,'2020-05-13 01:49:24'),
+	(50,'XF3WTW-7460-7DB3',35,'2019-01-20 10:33:44',2,'2021-05-30 18:18:29'),
+	(51,'VW2QCB-1820-9DL0',58,'2013-11-29 08:40:43',2,'2020-03-26 19:51:31'),
+	(52,'YL1IJS-3212-0FZ6',88,'2015-11-02 14:53:57',0,'2020-08-24 14:10:29'),
+	(53,'JO9YWN-5337-5SC1',2,'2017-06-04 00:09:44',3,'2020-01-23 03:22:57'),
+	(54,'DI8ZDS-7337-7TM7',9,'2019-04-25 20:35:18',2,'2020-09-14 13:42:03'),
+	(55,'GC2KCU-0549-2JK9',27,'2015-01-23 04:07:37',-1,'2021-04-19 23:59:14'),
+	(56,'HZ5AUG-8032-6KS8',73,'2017-08-02 14:07:34',1,'2019-12-21 16:47:46'),
+	(57,'KN3UVW-6237-4HG4',53,'2013-04-05 15:12:54',2,'2019-12-30 02:06:06'),
+	(58,'FA0PYS-0693-4AS3',3,'2018-07-11 09:48:05',3,'2020-12-29 23:40:32'),
+	(59,'AA2EIQ-5761-4WP6',62,'2014-01-05 13:27:45',2,'2020-05-28 00:56:14'),
+	(60,'KI6VKE-1967-7AH6',58,'2019-09-12 22:20:01',0,'2020-08-20 02:09:20');
+INSERT INTO Corporate.Orders([OrderIndex],[OrderId],[CustomerId],[OrderDateTime],[OrderStatus],[OrderStatusDate]) 
+	VALUES(61,'IG9CCY-2068-1ZW9',10,'2018-09-15 05:59:16',3,'2020-07-20 01:00:32'),
+	(62,'NV3CDM-5302-0QC6',76,'2019-02-21 05:24:44',-1,'2020-02-05 17:33:29'),
+	(63,'UD4BWD-0218-7OS8',97,'2019-04-24 21:26:24',4,'2020-02-23 04:34:30'),
+	(64,'AJ8LSB-0476-3QV4',61,'2014-05-14 20:59:04',4,'2021-06-09 15:32:44'),
+	(65,'UA4JKI-2191-0RK2',60,'2019-02-27 06:53:12',4,'2020-09-10 06:57:02'),
+	(66,'MI1MQJ-9077-8XG0',23,'2016-06-26 23:43:35',2,'2021-02-05 18:35:08'),
+	(67,'SW6GSQ-1112-2DW4',61,'2018-08-25 03:36:38',2,'2019-11-02 18:48:01'),
+	(68,'XA2JOS-0512-2QA2',64,'2018-04-01 02:20:45',4,'2021-04-08 21:19:02'),
+	(69,'FT9EFB-0724-6FY3',83,'2017-06-01 04:22:44',4,'2019-09-25 06:31:51'),
+	(70,'NZ1EVV-6467-9JJ3',69,'2019-04-05 00:22:59',1,'2021-02-08 21:48:10'),
+	(71,'XU6QAM-4683-3VN0',32,'2015-09-10 04:35:47',0,'2020-05-23 01:04:45'),
+	(72,'ZC7YSV-6476-2EX5',2,'2018-07-01 14:34:43',4,'2021-01-06 20:47:45'),
+	(73,'ZK7TRW-8494-8YV5',52,'2013-11-18 04:03:55',1,'2021-05-11 03:07:18'),
+	(74,'TZ8PGC-4698-5RW1',85,'2017-03-04 19:25:13',3,'2021-01-18 06:02:38'),
+	(75,'OY0GXX-8336-8SK7',30,'2017-10-02 14:50:16',1,'2020-01-03 00:48:30'),
+	(76,'CZ3SWC-8724-9BI0',65,'2014-08-25 00:55:29',4,'2021-01-01 12:26:58'),
+	(77,'YO5IGN-8357-7LO8',93,'2015-01-15 12:23:00',3,'2021-03-11 03:10:15'),
+	(78,'JA8MHO-3818-5WV5',44,'2015-07-31 14:08:10',1,'2021-03-03 09:01:52'),
+	(79,'XS8FQH-9317-4QL3',72,'2018-09-28 08:52:53',-1,'2021-01-13 23:32:45'),
+	(80,'VY1TUZ-1413-1TL3',22,'2013-11-18 04:18:48',1,'2020-04-01 22:04:28');
+INSERT INTO Corporate.Orders([OrderIndex],[OrderId],[CustomerId],[OrderDateTime],[OrderStatus],[OrderStatusDate]) 
+	VALUES(81,'MH1EMN-4031-4QL5',98,'2014-06-02 00:09:58',3,'2021-02-20 18:58:47'),
+	(82,'GC8BDP-6620-2MR6',49,'2013-01-13 01:52:28',1,'2021-05-13 13:23:43'),
+	(83,'ES5BOH-1332-7NI4',19,'2017-07-24 10:34:13',2,'2020-09-23 10:29:11'),
+	(84,'IG8NVE-3245-1XR7',74,'2014-06-22 19:36:22',2,'2020-11-29 23:00:55'),
+	(85,'PA1MTR-2154-5CO5',96,'2017-05-28 22:07:38',4,'2019-07-18 02:18:01'),
+	(86,'JB0QTO-9345-2GU2',84,'2015-04-13 08:56:59',4,'2019-09-17 05:05:43'),
+	(87,'GS0FXC-4143-9EA5',44,'2015-01-27 04:22:19',0,'2020-01-05 19:14:51'),
+	(88,'VB1NND-8074-3QC8',31,'2012-11-30 14:33:12',0,'2019-12-08 08:56:18'),
+	(89,'NT7XWC-0909-9JN1',87,'2016-03-09 00:42:02',-1,'2019-09-29 03:15:22'),
+	(90,'QL3DFK-3127-7QP1',29,'2012-11-24 14:41:07',-1,'2020-05-27 05:08:03'),
+	(91,'OJ6XVP-3199-6HF1',66,'2019-06-30 14:16:33',0,'2020-07-04 00:26:31'),
+	(92,'ZM9HPA-0662-7YX9',69,'2016-12-29 12:52:23',3,'2021-06-02 10:10:26'),
+	(93,'UG5VIF-0836-7XM1',19,'2012-08-17 16:47:10',3,'2019-10-19 02:15:46'),
+	(94,'KT6JIB-9093-9NR9',16,'2017-01-17 18:52:31',3,'2020-07-06 01:50:43'),
+	(95,'XM3NJV-0547-1DN1',39,'2015-10-06 15:20:21',-1,'2020-07-18 03:22:08'),
+	(96,'QX1WOF-7333-7JY9',34,'2016-11-30 06:34:38',1,'2020-04-01 22:40:39'),
+	(97,'BQ7DYP-7377-8XJ5',50,'2016-06-21 01:45:53',3,'2021-01-04 01:28:37'),
+	(98,'GH0UVH-2652-3DR6',59,'2017-01-07 17:28:39',1,'2019-11-26 19:56:35'),
+	(99,'TU2GWU-1651-3FD4',65,'2016-08-24 11:36:10',1,'2021-04-20 02:33:11'),
+	(100,'NO7WVM-8516-6MW0',18,'2018-07-28 19:52:03',0,'2019-08-16 03:06:02');
+INSERT INTO Corporate.Orders([OrderIndex],[OrderId],[CustomerId],[OrderDateTime],[OrderStatus],[OrderStatusDate]) 
+	VALUES(101,'MI8DKE-5534-9IJ4',21,'2015-08-30 16:29:33',2,'2019-11-06 12:37:33'),
+	(102,'NC6AQC-8752-9QR6',33,'2015-02-14 11:04:30',-1,'2021-03-31 18:09:51'),
+	(103,'PD6IYM-7641-8LX2',85,'2017-09-22 17:45:43',1,'2020-03-03 11:21:35'),
+	(104,'JT2ACT-9467-9BL7',85,'2016-06-14 05:20:32',-1,'2019-11-18 11:52:16'),
+	(105,'MQ2AXN-6108-3LM3',62,'2017-12-30 08:46:08',3,'2020-06-26 19:01:08'),
+	(106,'WJ4WZU-7742-1LE4',70,'2015-01-05 11:33:37',2,'2020-10-28 19:27:30'),
+	(107,'SL2XFI-1730-1SK3',69,'2012-07-22 10:57:04',3,'2019-10-12 13:27:04'),
+	(108,'SW8PKG-5695-6RB4',3,'2017-09-26 20:15:03',1,'2019-07-08 02:37:47'),
+	(109,'FJ1OAB-4482-3EB2',47,'2013-11-21 01:45:41',2,'2020-11-21 08:42:47'),
+	(110,'FC1ONJ-3516-3HP7',66,'2017-08-01 02:47:09',1,'2019-11-25 00:46:51'),
+	(111,'CJ9YIY-9673-9HD9',88,'2016-10-09 13:15:31',-1,'2021-04-13 12:11:31'),
+	(112,'IJ2MSU-2774-9UJ3',7,'2019-03-21 15:46:34',-1,'2019-11-15 13:07:26'),
+	(113,'PX0GLG-9874-1VD5',8,'2020-05-07 16:37:07',1,'2019-07-17 11:59:36'),
+	(114,'FZ2YVQ-6199-3OQ5',15,'2014-06-20 11:04:04',2,'2019-10-19 11:34:17'),
+	(115,'OX9YIO-0790-9RB3',62,'2013-03-29 17:56:19',3,'2021-06-19 15:30:40'),
+	(116,'PQ3QBW-0021-0FO7',41,'2012-11-08 10:15:24',-1,'2019-08-25 17:31:12'),
+	(117,'YJ3VBM-6799-9AH7',86,'2014-01-20 13:20:47',-1,'2021-03-24 20:44:51'),
+	(118,'RI6OFH-6038-0YW4',46,'2019-01-13 21:12:28',-1,'2019-10-21 01:50:24'),
+	(119,'LW5XCP-7463-9DE3',59,'2013-06-10 16:14:08',4,'2020-06-04 18:51:38'),
+	(120,'JJ4URO-0721-4NG0',4,'2018-07-28 00:08:41',3,'2020-09-17 09:29:12');
+INSERT INTO Corporate.Orders([OrderIndex],[OrderId],[CustomerId],[OrderDateTime],[OrderStatus],[OrderStatusDate]) 
+	VALUES(121,'NW6GTT-0196-9EY5',8,'2013-07-15 16:17:20',0,'2021-05-04 07:27:35'),
+	(122,'YH2MEX-0077-3EH0',17,'2014-09-15 01:26:02',-1,'2021-05-27 20:01:17'),
+	(123,'CT3DEO-0337-5PY8',97,'2016-12-03 10:42:10',2,'2020-07-03 06:58:26'),
+	(124,'PB9MZO-9311-1NA8',48,'2019-02-03 10:56:40',2,'2020-05-27 21:28:47'),
+	(125,'HD9HVR-4697-3OV8',3,'2019-05-26 09:30:38',3,'2019-09-12 16:05:02'),
+	(126,'QL1RAI-1222-1QU3',92,'2017-07-09 08:03:29',-1,'2019-08-27 12:42:55'),
+	(127,'WD2WBD-3950-9LR2',34,'2019-07-15 23:54:48',2,'2020-02-06 11:11:23'),
+	(128,'VI4JLA-6841-7MA2',32,'2020-01-31 20:31:37',0,'2021-04-09 18:06:51'),
+	(129,'PF1TAJ-7688-1BG4',69,'2018-12-19 01:33:53',4,'2020-02-25 21:42:23'),
+	(130,'YR5KVK-1666-0KB6',92,'2019-06-21 04:26:31',3,'2019-07-19 07:25:14'),
+	(131,'UQ0UWO-2751-1ZZ2',53,'2018-09-09 00:06:49',0,'2020-11-24 06:00:19'),
+	(132,'RE3JGP-3596-7ZP2',72,'2020-02-21 11:59:28',0,'2019-11-12 23:53:34'),
+	(133,'GV6KUI-2483-7YM7',30,'2016-05-22 04:38:27',1,'2021-06-18 06:05:26'),
+	(134,'CJ4GUZ-5278-7EP6',48,'2013-09-27 20:25:20',1,'2020-08-31 03:07:13'),
+	(135,'LL7EDK-0154-8AU2',67,'2017-05-09 00:18:38',1,'2020-07-20 20:27:28'),
+	(136,'OW3GQV-6905-4QN5',29,'2018-01-15 15:35:10',-1,'2020-04-30 03:00:22'),
+	(137,'WC3ZGW-7484-7KK0',39,'2016-08-21 14:21:10',2,'2020-10-17 17:47:29'),
+	(138,'MX5IUM-8106-1SS3',37,'2016-07-29 10:51:14',1,'2020-07-01 12:57:11'),
+	(139,'HC9CGZ-5040-9RA5',78,'2016-12-31 22:56:42',-1,'2021-04-01 07:55:21'),
+	(140,'RB5OIA-0893-1KQ4',67,'2019-07-10 07:13:06',4,'2021-05-11 07:14:58');
+INSERT INTO Corporate.Orders([OrderIndex],[OrderId],[CustomerId],[OrderDateTime],[OrderStatus],[OrderStatusDate]) 
+	VALUES(141,'JA0HYA-2996-2HK2',80,'2015-12-29 11:21:00',4,'2020-01-26 19:15:50'),
+	(142,'KA5ASK-4135-9FD9',53,'2018-03-08 04:13:53',1,'2021-02-19 05:14:19'),
+	(143,'NB1GHN-7380-7OM2',7,'2019-06-10 16:59:05',3,'2021-01-01 23:33:59'),
+	(144,'KD7TAR-7275-9EE3',2,'2017-06-02 08:13:42',2,'2020-08-07 15:06:02'),
+	(145,'YK8VEW-2027-2VZ9',22,'2013-11-10 11:28:42',3,'2019-08-22 13:41:52'),
+	(146,'PG6FFL-4761-8IB4',61,'2013-03-25 00:48:33',-1,'2021-01-21 08:33:32'),
+	(147,'MI2UOM-9128-5CX8',9,'2016-09-05 06:18:00',3,'2020-12-20 05:02:42'),
+	(148,'AI3KKC-9571-5WI5',50,'2019-06-07 16:26:44',2,'2020-03-13 06:42:37'),
+	(149,'GT5ESG-3196-3WC3',88,'2013-12-31 16:12:34',4,'2020-08-30 21:13:11'),
+	(150,'MS3JYN-7687-5LU2',63,'2017-01-15 20:19:38',0,'2019-07-03 04:00:26'),
+	(151,'RJ9IZS-1505-0PL8',92,'2016-07-25 19:02:28',4,'2020-02-05 04:10:35'),
+	(152,'WD7WCD-1878-1OJ6',29,'2012-09-20 14:05:19',-1,'2020-01-17 06:11:27'),
+	(153,'UZ1PJM-0860-1XK2',41,'2015-03-07 05:05:05',1,'2019-10-31 01:11:19'),
+	(154,'YI5PYW-3516-9WT3',80,'2015-09-09 13:01:00',-1,'2019-07-08 11:36:30'),
+	(155,'AW2DZA-1607-9FI8',74,'2016-07-18 15:27:37',0,'2019-11-14 19:13:09'),
+	(156,'NS1CWD-4625-6BU9',80,'2017-06-10 09:38:05',1,'2020-02-29 21:11:29'),
+	(157,'NG2CYB-2116-8YI3',46,'2018-06-24 01:15:39',4,'2019-09-08 09:16:15'),
+	(158,'LH7XDZ-3299-7US3',89,'2017-05-20 19:31:44',2,'2020-02-11 14:45:48'),
+	(159,'SN4BOB-8574-8FD3',97,'2017-06-09 09:13:05',3,'2019-12-15 13:41:44'),
+	(160,'UM8BDA-0778-7CV9',81,'2017-04-19 18:17:02',-1,'2021-02-27 08:44:15');
+INSERT INTO Corporate.Orders([OrderIndex],[OrderId],[CustomerId],[OrderDateTime],[OrderStatus],[OrderStatusDate]) 
+	VALUES(161,'JU3YWT-8946-7JQ5',25,'2015-07-31 10:03:45',-1,'2020-11-22 23:08:57'),
+	(162,'RF9QZW-9151-4HC6',66,'2012-06-07 11:36:33',3,'2020-02-18 12:09:54'),
+	(163,'HV7IYW-4242-3GE8',44,'2017-10-29 00:41:24',4,'2020-10-09 03:37:04'),
+	(164,'QQ9UXF-9579-5XP3',69,'2015-01-08 02:46:38',4,'2021-01-21 12:05:40'),
+	(165,'MN0GQG-9810-6CX1',83,'2014-09-10 03:44:08',-1,'2020-11-23 05:12:19'),
+	(166,'TZ4FPN-9350-1XT4',63,'2012-10-23 16:45:47',0,'2020-01-11 18:08:51'),
+	(167,'HM3FPO-9784-9LT2',66,'2018-09-18 19:58:16',2,'2020-08-22 16:54:51'),
+	(168,'KI1FFA-7823-6UN0',83,'2012-06-17 13:01:54',3,'2020-06-24 15:16:36'),
+	(169,'AA2SAB-0570-2NA3',6,'2019-08-28 15:46:15',-1,'2019-10-15 10:12:08'),
+	(170,'HR5WXC-4764-1BU9',53,'2015-05-09 09:21:10',-1,'2020-01-21 14:46:28'),
+	(171,'BH6ZAM-3233-1ST4',12,'2019-11-14 21:36:41',-1,'2021-01-12 08:09:18'),
+	(172,'SA2UJQ-4041-2IV7',33,'2017-05-18 03:32:27',3,'2021-06-29 00:43:11'),
+	(173,'XG0JYC-2059-4AM1',55,'2018-03-03 14:50:54',1,'2019-12-29 23:29:37'),
+	(174,'XQ6BXT-8776-1JP2',86,'2018-04-10 14:13:07',3,'2019-09-13 10:56:56'),
+	(175,'VV8HDW-3584-8KI5',24,'2014-01-14 12:13:46',0,'2020-02-26 19:14:18'),
+	(176,'NF7LDE-2394-6RF9',74,'2015-05-09 20:52:19',3,'2021-04-16 16:17:03'),
+	(177,'BG2DPM-6937-5WK6',13,'2016-07-13 04:02:26',0,'2020-05-23 04:22:34'),
+	(178,'GB0SAJ-1472-4BB6',89,'2013-11-14 05:01:13',1,'2021-01-13 14:23:35'),
+	(179,'RI5QET-7782-9FW7',74,'2012-08-05 05:45:41',3,'2020-11-08 15:53:52'),
+	(180,'XX3JCO-5956-9LQ2',18,'2020-06-07 21:20:44',0,'2020-07-03 22:50:49');
+INSERT INTO Corporate.Orders([OrderIndex],[OrderId],[CustomerId],[OrderDateTime],[OrderStatus],[OrderStatusDate]) 
+	VALUES(181,'JD2RSP-0871-7RR0',63,'2018-11-26 06:19:24',3,'2020-03-29 02:43:22'),
+	(182,'LG0CUE-7848-0ME7',42,'2018-09-25 16:58:31',2,'2020-07-03 14:18:50'),
+	(183,'XD6VDH-6298-6IB4',19,'2016-12-23 10:16:16',4,'2021-05-18 03:38:23'),
+	(184,'ZT0AYB-4680-7FN7',14,'2020-03-05 14:37:10',3,'2020-03-17 11:43:28'),
+	(185,'BQ4UVQ-8302-9FJ1',74,'2017-05-10 08:17:25',0,'2021-03-28 19:36:06'),
+	(186,'SH8FYV-8944-9PV2',94,'2016-10-25 19:30:09',1,'2019-11-16 15:52:38'),
+	(187,'GA4HIE-8076-7UV1',63,'2019-06-13 03:21:44',0,'2020-03-21 17:25:24'),
+	(188,'SK5RWA-8433-6GQ8',93,'2019-01-21 01:45:27',4,'2020-04-17 11:55:33'),
+	(189,'VO6JHB-3217-3KV5',81,'2016-06-29 09:14:05',2,'2020-11-08 10:04:28'),
+	(190,'OV2FTY-7360-6AY9',17,'2013-03-06 20:06:01',1,'2020-12-02 01:27:56'),
+	(191,'HG3JZB-7453-1XV0',91,'2017-11-09 13:50:11',4,'2020-09-02 11:50:14'),
+	(192,'WJ1XZK-2929-9HH7',32,'2013-12-15 05:24:39',0,'2021-04-19 16:16:55'),
+	(193,'BD9ULE-1980-0CD9',48,'2017-08-24 20:32:50',-1,'2019-10-24 16:24:20'),
+	(194,'ZV0KGM-9012-3HT7',33,'2014-03-27 17:12:49',4,'2020-08-27 22:57:16'),
+	(195,'FB4SWY-9959-3VI2',29,'2014-08-10 08:44:39',-1,'2020-02-26 00:21:03'),
+	(196,'EA5WXY-2567-0FG5',11,'2014-10-05 00:42:02',3,'2020-10-22 11:20:08'),
+	(197,'HQ8OZE-4358-0QG0',89,'2016-06-28 12:13:24',3,'2020-08-22 08:44:19'),
+	(198,'LQ2GDV-1872-3QG8',25,'2013-12-31 07:02:01',0,'2020-10-18 08:35:38'),
+	(199,'JU3WSR-4951-3CL4',31,'2014-04-27 07:12:56',-1,'2019-12-29 12:00:08'),
+	(200,'WL1AJU-3492-7VV3',16,'2017-04-02 12:52:47',-1,'2019-11-22 19:45:52');
+SET IDENTITY_INSERT Corporate.Orders OFF
+GO

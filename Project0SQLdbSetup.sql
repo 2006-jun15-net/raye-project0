@@ -14,8 +14,8 @@ CREATE TABLE Corporate.Stores (StoreId INT PRIMARY KEY,
 	CHECK ((StoreZip > 9999) AND (StoreZip < 100000)))
 
 --DROP Table Corporate.Orders
-CREATE TABLE Corporate.Orders (OrderIndex INT IDENTITY (1,1), --Similar to, but not the primary key
-	OrderId CHAR PRIMARY KEY DEFAULT CONVERT(CHAR(16),NEWID()),
+CREATE TABLE Corporate.Orders (OrderIndex INT IDENTITY (1,1) PRIMARY KEY,
+	OrderId NVARCHAR(17) DEFAULT CONVERT(CHAR(16),NEWID()),
 	CustomerId INT NOT NULL,
 	OrderDateTime SMALLDATETIME DEFAULT GETUTCDATE(),
 	OrderStatus INT DEFAULT 4 NOT NULL,
@@ -34,9 +34,9 @@ ItemPrice SMALLMONEY NOT NULL,
 ItemVendor NVARCHAR(100) NOT NULL)
 GO
 
---DROP Table Corporate.OrderDetails
+--DROP Table Corporate.OrderInvoice
 CREATE TABLE Corporate.OrderInvoice (InvoiceLineNumber INT PRIMARY KEY IDENTITY (1,1),
-	OrderId CHAR CONSTRAINT OrderId_to_OrderId_FK FOREIGN KEY REFERENCES Corporate.Orders (OrderId) ON UPDATE CASCADE,
+	OrderIndex INT CONSTRAINT OrderIndex_to_OrderIndex_FK FOREIGN KEY REFERENCES Corporate.Orders (OrderIndex) ON UPDATE CASCADE,
 	ItemId INT CONSTRAINT ItemId_to_ItemIndex FOREIGN KEY REFERENCES Corporate.ItemList (ItemIndex) ON UPDATE CASCADE,
 	ItemQuantity INT)
 
@@ -64,7 +64,7 @@ CREATE TABLE Corporate.Employees (EmployeeId INT PRIMARY KEY IDENTITY (1,1),
 
 GO
 --DROP TABLE Corporate.EmployeeDetails
-CREATE TABLE Corporate.EmployeeDetails (EmployeeId INT UNIQUE FOREIGN KEY 
+CREATE TABLE Corporate.EmployeeDetails (EmployeeId INT UNIQUE CONSTRAINT EmployeeDetails_to_Employee_FK FOREIGN KEY 
 	REFERENCES Corporate.Employees (EmployeeId) ON UPDATE CASCADE ON DELETE CASCADE,
 	--Should only have 1-to-1 relationship with employees table.
 	EmployeeEmail NVARCHAR(100) UNIQUE,
@@ -89,16 +89,28 @@ CREATE TABLE Customer.Customers (CustomerIndex INT PRIMARY KEY IDENTITY (1,1),
 	PreferredStore INT CONSTRAINT Customer_to_Store_FK FOREIGN KEY REFERENCES Corporate.Stores (StoreId),
 	CHECK ((Zip > 9999) AND (Zip < 100000)))
 
+--DROP TABLE Customer.CustomerFeedback
+CREATE TABLE Customer.CustomerFeedback (CustomerIndex INT CONSTRAINT CustomerIndex_to_Customer_FK FOREIGN KEY
+	REFERENCES Customer.Customers (CustomerIndex) ON UPDATE CASCADE ON DELETE SET NULL,
+	StoreReviewed INT CONSTRAINT StoreReviewed_to_Store_FK FOREIGN KEY REFERENCES Corporate.Stores(StoreId)
+	ON UPDATE CASCADE ON DELETE SET NULL DEFAULT NULL,
+	CustomerRating INT,
+	CustomerFeedback NVARCHAR(500),
+	CHECK ((CustomerRating >= 0) AND (CustomerRating <=10)))
+
 --DROP TABLE Customer.Orders
-CREATE TABLE Customer.Orders (OrderIndex CHAR CONSTRAINT Customer_to_Orders_FK FOREIGN KEY REFERENCES Corporate.Orders(OrderId),
-	InvoiceLineNumber INT CONSTRAINT LineNumber_to_OrderId_FK FOREIGN KEY REFERENCES Corporate.OrderInvoice (InvoiceLineNumber))
+--CREATE TABLE Customer.Orders (OrderIndex CHAR CONSTRAINT Customer_to_Orders_FK FOREIGN KEY REFERENCES Corporate.Orders(OrderId),
+--	InvoiceLineNumber INT CONSTRAINT LineNumber_to_OrderId_FK FOREIGN KEY REFERENCES Corporate.OrderInvoice (InvoiceLineNumber))
 
 GO
 ALTER TABLE Corporate.ItemList ADD CONSTRAINT VendorName_FK
 	FOREIGN KEY (ItemVendor) REFERENCES Corporate.VendorList (VendorName)
 
-ALTER TABLE Corporate.Stores ADD CONSTRAINT Manager_FK
-	FOREIGN KEY (StoreManager) REFERENCES Corporate.Employees (EmpoyeeId)
+ALTER TABLE Corporate.Stores ADD CONSTRAINT Store_to_Manager_FK
+	FOREIGN KEY (StoreManager) REFERENCES Corporate.Employees (EmployeeId)
+
+ALTER TABLE Corporate.Orders ADD CONSTRAINT Customer_to_Order_FK FOREIGN KEY
+	(CustomerId) REFERENCES Customer.Customers(CustomerIndex)
 GO
 
 --CREATE TRIGGER UpdateOrderStatusDate ON Corporate.Orders AFTER UPDATE AS 
