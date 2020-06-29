@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Project0.dataaccess\Project0.dataaccess.csproj" />
+    <ProjectReference Include="..\Project0.DataAccess\Project0.DataAccess.csproj" />
     <ProjectReference Include="..\Project0.library\Project0.library.csproj" />
   </ItemGroup>
 

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Project0.dataaccess.Entities
+namespace Project0.DataAccess.Entities
 {
-    public partial class Costumers
+    public partial class Customers
     {
         public int CustomerIndex { get; set; }
         public string FirstName { get; set; }

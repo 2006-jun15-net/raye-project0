@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Project0.dataaccess
+namespace Project0.DataAccess
 {
     public class Class1
     {

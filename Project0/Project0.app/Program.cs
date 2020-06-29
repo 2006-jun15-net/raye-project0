@@ -7,6 +7,8 @@ namespace Project0.app
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            Console.WriteLine("Program Complete");
         }
     }
 }

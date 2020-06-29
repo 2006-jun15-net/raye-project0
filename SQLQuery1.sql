@@ -1,1 +1,1 @@
-SELECT * FROM Customer.Customers
+SELECT * FROM Corporate.Stores

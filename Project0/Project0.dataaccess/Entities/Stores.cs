@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Project0.dataaccess.Entities
+namespace Project0.DataAccess.Entities
 {
     public partial class Stores
     {
         public Stores()
         {
-            Costumers = new HashSet<Costumers>();
+            Customers = new HashSet<Customers>();
         }
 
         public int StoreId { get; set; }
@@ -17,6 +17,7 @@ namespace Project0.dataaccess.Entities
         public string StoreState { get; set; }
         public int? StoreZip { get; set; }
 
-        public virtual ICollection<Costumers> Costumers { get; set; }
+        public virtual Employees StoreManagerNavigation { get; set; }
+        public virtual ICollection<Customers> Customers { get; set; }
     }
 }
