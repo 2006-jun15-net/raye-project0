@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project0.library", "Project
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project0.test", "Project0.test\Project0.test.csproj", "{32F4E19A-FBF3-4F3B-9E3A-2A3E678A6C24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RayPersonal.library", "RayPersonal.library\RayPersonal.library.csproj", "{6BA84D1A-BE49-4A6A-8735-3BDC9C8B0172}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RayPersonal.library", "RayPersonal.library\RayPersonal.library.csproj", "{6BA84D1A-BE49-4A6A-8735-3BDC9C8B0172}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project0.dataaccess", "Project0.dataaccess\Project0.dataaccess.csproj", "{7F0B3792-8C54-4693-9C3D-C68E03E512B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{6BA84D1A-BE49-4A6A-8735-3BDC9C8B0172}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BA84D1A-BE49-4A6A-8735-3BDC9C8B0172}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BA84D1A-BE49-4A6A-8735-3BDC9C8B0172}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F0B3792-8C54-4693-9C3D-C68E03E512B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F0B3792-8C54-4693-9C3D-C68E03E512B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F0B3792-8C54-4693-9C3D-C68E03E512B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F0B3792-8C54-4693-9C3D-C68E03E512B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

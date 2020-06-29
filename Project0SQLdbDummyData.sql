@@ -1,193 +1,299 @@
---Special thanks to the random generater at generatedata.com for a whole lot of saved typing.
+﻿--Special thanks to the random generater at generatedata.com for a whole lot of saved typing.
+
+--Vendor List
+SET IDENTITY_INSERT Corporate.VendorList ON
+INSERT INTO Corporate.VendorList(VendorIndex,VendorName,VendorStAddress,VendorCity,VendorState,VendorZip,VendorCountry,VendorEmail,VendorPhone)
+	VALUES(1,'Microsoft','100 Microsoft Way','San Fransisco','CA',98765,'USA','whydidntwestopatWin7@microsoft.com','123456789'),
+	(2,'Macromedia',NULL,'San Diego','CA',95405,'USA','abcd@macromedia.net','2433234342'),
+	(3,'Google','Whole Planet',NULL,'CA',11111,'USA','google@google.com','1243215655'),
+	(4,'Yahoo','Are we still in business St',NULL,'WA',44323,'USA','yahoo@yahoo.com','5323335542'),
+	(5,'Lycos','111 fake st','hollywood','CA',53532,'USA','huh@lycos.com','2111113111'),
+	(6,'Altavista','unknown','Dallas','TX',76205,'USA','altavista@altavista.com','2452531243'),
+	(7,'Chami','533cjije st','Irving','TX',85333,'USA','lycos@who.com',NULL),
+	(8,'Adobe','Acrobat Way','New York','NY',24345,'USA','abc@abc.com',NULL),
+	(9,'Borland',NULL,NULL,'AR',75464,'USA','BorlandEmail@any.com',NULL),
+	(10,'Lavasoft',NULL,NULL,'OR',99977,'USA','random@email.com',NULL),
+	(11,'Cakewalk',NULL,NULL,NULL,93842,'USA','cakewalk@easystreet.com',NULL),
+	(12,'Sibelius',NULL,NULL,NULL,NULL,'UK','Si@music.com',NULL),
+	(13,'Finale',NULL,NULL,NULL,NULL,'France','music@composition.com',NULL),
+	(14,'Apple Systems',NULL,NULL,NULL,NULL,'China','apple@apple.com',NULL)
+SET IDENTITY_INSERT Corporate.VendorList OFF
 
 --Item Inventory
+SET IDENTITY_INSERT Corporate.ItemList ON
 INSERT INTO Corporate.ItemList([ItemIndex],[ItemName],[ItemDescription],[ItemPrice],[ItemVendor]) 
-	VALUES(1001,'turpis. Nulla aliquet.','fringilla purus mauris a nunc. In at pede. Cras vulputate',
-		'$65.40','posuere, enim nisl'),
-	(1002,'risus. Donec egestas.','a ultricies','$76.11','amet,'),
-	(1003,'ipsum dolor','tristique ac, eleifend vitae, erat. Vivamus nisi. Mauris nulla. Integer urna. 
-		Vivamus molestie dapibus ligula. Aliquam erat volutpat. Nulla dignissim. Maecenas ornare egestas ligula. Nullam',
-		'$77.87','congue. In'),
-	(1004,'placerat eget,','at fringilla purus mauris a nunc. In at pede. Cras vulputate velit eu sem. Pellentesque 
-		ut ipsum ac mi eleifend','$46.09','Nunc'),
-	(1005,'vel','lectus convallis est, vitae sodales nisi magna sed dui. Fusce aliquam, enim nec tempus scelerisque, 
-		lorem ipsum sodales purus, in molestie tortor nibh sit','$22.63','nec'),
-	(1006,'In at','velit. Pellentesque ultricies dignissim lacus. Aliquam rutrum lorem ac','$50.21','in,'),
-	(1007,'purus. Maecenas','risus. Donec nibh enim, gravida sit amet, dapibus id, blandit at, nisi. Cum sociis 
-		natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.','$89.34','ultrices iaculis odio.'),
-	(1008,'nec','commodo hendrerit.','$57.54','sollicitudin'),
-	(1009,'vel nisl.','Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et 
-		malesuada fames ac turpis egestas. Fusce','$1.25','aliquet'),
-	(1010,'ornare. In faucibus.','facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque','$35.85',
-		'Ut tincidunt vehicula');
+	VALUES(1001,'sem, vitae aliquam eros','arcu et pede. Nunc sed orci lobortis','$100.00','Adobe'),
+	(1002,'Phasellus','est. Nunc laoreet lectus quis massa. Mauris vestibulum, neque sed dictum eleifend, nunc risus varius','$37.07','Chami'),
+	(1003,'magna','nunc id enim. Curabitur massa. Vestibulum accumsan neque et nunc. Quisque ornare','$63.51','Chami'),
+	(1004,'malesuada fames','sit amet, dapibus id, blandit at,','$78.97','Apple Systems'),
+	(1005,'sit amet lorem','enim, sit','$6.59','Chami'),
+	(1006,'malesuada augue ut lacus. Nulla','elit sed consequat auctor, nunc','$43.61','Yahoo'),
+	(1007,'rhoncus. Donec','nulla vulputate dui, nec tempus mauris erat eget ipsum. Suspendisse','$48.72','Lavasoft'),
+	(1008,'risus quis diam luctus','nec, mollis vitae, posuere at, velit.','$84.48','Cakewalk'),
+	(1009,'magna a neque. Nullam','felis, adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus. Cras interdum. Nunc sollicitudin 
+		commodo ipsum. Suspendisse','$68.00','Yahoo'),
+	(1010,'ultrices posuere','sem elit, pharetra ut, pharetra sed, hendrerit a, arcu. Sed','$88.80','Finale'),
+	(1011,'consectetuer adipiscing','massa. Quisque porttitor','$36.57','Finale'),
+	(1012,'ridiculus mus.','nec tellus. Nunc lectus pede, ultrices a, auctor non, feugiat nec,','$60.10','Apple Systems'),
+	(1013,'ut quam vel sapien imperdiet','Nullam vitae diam. Proin dolor. Nulla semper','$63.54','Microsoft'),
+	(1014,'nec, malesuada ut,','Lorem ipsum','$69.83','Microsoft'),
+	(1015,'vitae diam.','metus. In nec orci. Donec nibh.','$64.54','Yahoo'),
+	(1016,'at','eros. Proin ultrices. Duis volutpat nunc sit amet metus.','$88.79','Google'),
+	(1017,'montes, nascetur ridiculus mus.','ac, eleifend vitae, erat. Vivamus nisi. Mauris nulla. Integer urna. Vivamus','$77.15','Borland'),
+	(1018,'at,','eu, eleifend nec,','$27.05','Sibelius'),
+	(1019,'nunc.','turpis egestas. Aliquam fringilla cursus','$18.00','Microsoft'),
+	(1020,'Donec vitae','lacus.','$60.93','Chami');
 INSERT INTO Corporate.ItemList([ItemIndex],[ItemName],[ItemDescription],[ItemPrice],[ItemVendor]) 
-	VALUES(1011,'Curae; Donec tincidunt.','et ultrices posuere cubilia Curae; Phasellus ornare. Fusce mollis. 
-		Duis sit amet diam eu dolor egestas rhoncus. Proin nisl sem, consequat nec, mollis','$6.98','luctus sit'),
-	(1012,'varius orci,','Duis elementum, dui quis accumsan convallis, ante lectus convallis est, vitae sodales nisi 
-		magna sed dui. Fusce aliquam, enim nec tempus scelerisque, lorem ipsum sodales','$39.63','vulputate'),
-	(1013,'fermentum','at risus. Nunc ac sem ut dolor dapibus gravida. Aliquam tincidunt, nunc ac mattis ornare, 
-		lectus ante dictum mi, ac mattis velit','$10.89','neque non quam.'),
-	(1014,'nulla. In tincidunt','ipsum sodales purus, in molestie tortor nibh sit amet orci. Ut sagittis 
-		lobortis mauris. Suspendisse aliquet molestie tellus. Aenean egestas hendrerit neque. In','$7.78','Nunc mauris'),
-	(1015,'dictum sapien. Aenean','nulla.','$16.22','risus.'),
-	(1016,'metus facilisis lorem','elit. Etiam laoreet, libero et tristique pellentesque, tellus sem mollis dui, 
-		in sodales elit erat vitae risus. Duis a mi','$22.14','gravida mauris ut'),
-	(1017,'commodo tincidunt','tincidunt','$85.93','Cum'),
-	(1018,'lorem, luctus ut,','feugiat non, lobortis quis, pede. Suspendisse dui. Fusce diam nunc, ullamcorper eu, 
-		euismod ac, fermentum vel, mauris. Integer sem elit, pharetra ut, pharetra sed, hendrerit','$73.79',
-		'Pellentesque tincidunt'),
-	(1019,'turpis','molestie arcu. Sed eu nibh','$34.40','sociis'),
-	(1020,'pede. Cum sociis','erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. 
-		Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper','$70.29',
-		'dolor egestas');
+	VALUES(1021,'eget varius','orci. Donec nibh. Quisque nonummy ipsum non arcu. Vivamus sit amet risus. Donec egestas.','$37.45','Apple Systems'),
+	(1022,'faucibus. Morbi','vestibulum lorem, sit amet ultricies sem','$2.49','Sibelius'),
+	(1023,'luctus','fames ac turpis egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque','$94.89','Macromedia'),
+	(1024,'Cras','luctus vulputate, nisi sem semper','$40.82','Google'),
+	(1025,'nulla. Integer','mi lorem, vehicula','$10.90','Macromedia'),
+	(1026,'diam. Sed diam lorem,','nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing,','$49.42','Altavista'),
+	(1027,'pulvinar arcu et pede. Nunc','Duis elementum, dui quis','$32.66','Microsoft'),
+	(1028,'dolor','arcu. Vestibulum ut eros non enim commodo','$12.05','Adobe'),
+	(1029,'est, congue a, aliquet','quis accumsan convallis, ante lectus','$59.58','Microsoft'),
+	(1030,'nibh dolor, nonummy','elementum sem,','$27.32','Cakewalk'),
+	(1031,'volutpat.','bibendum sed, est. Nunc laoreet lectus','$4.83','Lycos'),
+	(1032,'Vivamus nisi. Mauris nulla.','lectus rutrum urna, nec luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi','$74.11','Cakewalk'),
+	(1033,'purus. Maecenas libero','est mauris, rhoncus id, mollis nec, cursus a, enim. Suspendisse aliquet, sem ut cursus luctus,','$34.24',
+		'Microsoft'),
+	(1034,'tellus id','ullamcorper viverra. Maecenas iaculis aliquet diam. Sed diam lorem, auctor quis, tristique','$68.76','Google'),
+	(1035,'Pellentesque ut ipsum ac mi','lacinia. Sed congue, elit sed consequat auctor, nunc nulla vulputate dui, nec tempus mauris','$18.85',
+		'Google'),
+	(1036,'eleifend, nunc risus','a sollicitudin orci sem eget massa. Suspendisse eleifend.','$83.68','Cakewalk'),
+	(1037,'cursus a, enim. Suspendisse','cursus non, egestas a, dui. Cras pellentesque. Sed dictum. Proin eget odio. Aliquam vulputate ullamcorper',
+		'$70.20','Apple Systems'),
+	(1038,'euismod mauris eu elit.','aliquet, metus urna convallis erat, eget tincidunt dui augue eu tellus.','$97.55','Adobe'),
+	(1039,'Aliquam adipiscing','erat neque non quam. Pellentesque habitant morbi tristique senectus','$70.81','Adobe'),
+	(1040,'sodales at,','ligula. Aenean euismod mauris','$48.05','Apple Systems');
 INSERT INTO Corporate.ItemList([ItemIndex],[ItemName],[ItemDescription],[ItemPrice],[ItemVendor]) 
-	VALUES(1021,'massa.','dolor, tempus non, lacinia at, iaculis quis,','$58.48','odio'),
-	(1022,'luctus aliquet odio.','Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, 
-		egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede.','$15.33','Duis'),
-	(1023,'orci lobortis','augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, 
-		facilisis vitae, orci. Phasellus dapibus quam quis diam.','$38.98','porttitor scelerisque neque.'),
-	(1024,'Donec at','ante. Vivamus non lorem vitae odio sagittis','$59.57','tincidunt'),
-	(1025,'sodales at, velit.','dui quis accumsan convallis, ante lectus convallis est, vitae sodales nisi magna 
-		sed dui. Fusce aliquam, enim nec tempus scelerisque, lorem ipsum','$86.87','erat eget ipsum.'),
-	(1026,'varius. Nam porttitor','mattis. Cras eget nisi dictum augue','$26.68','ipsum. Phasellus'),
-	(1027,'luctus','sem,','$47.26','Nam porttitor'),
-	(1028,'lorem','In tincidunt congue turpis. In condimentum. Donec at arcu. Vestibulum ante ipsum primis in faucibus 
-		orci luctus et ultrices posuere cubilia','$2.15','mauris eu elit.'),
-	(1029,'vulputate, lacus. Cras','vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac metus 
-		vitae velit egestas lacinia. Sed congue, elit sed consequat auctor, nunc nulla vulputate dui,','$10.48','vel, 
-		venenatis vel,'),
-	(1030,'et magnis dis','penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec dignissim 
-		magna a tortor. Nunc commodo auctor velit. Aliquam','$19.70','nisl arcu');
+	VALUES(1041,'nisi sem semper','Maecenas malesuada','$30.98','Lycos'),
+	(1042,'leo','pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed,','$70.89','Macromedia'),
+	(1043,'rutrum, justo. Praesent luctus.','lorem, eget mollis lectus pede et risus. Quisque libero lacus, varius et, euismod','$63.62','Google'),
+	(1044,'dignissim magna a','mi fringilla mi lacinia mattis. Integer eu lacus.','$48.38','Microsoft'),
+	(1045,'quam','ac mattis velit justo nec ante. Maecenas mi felis, adipiscing fringilla, porttitor','$94.16','Borland'),
+	(1046,'tellus.','vitae erat vel pede blandit congue.','$45.47','Apple Systems'),
+	(1047,'est ac facilisis','semper erat, in consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan','$13.21','Borland'),
+	(1048,'vitae, erat. Vivamus nisi. Mauris','ac,','$50.18','Lycos'),
+	(1049,'consectetuer adipiscing','egestas hendrerit neque. In ornare sagittis felis. Donec tempor, est ac mattis semper, dui lectus',
+		'$24.41','Cakewalk'),
+	(1050,'vulputate mauris sagittis placerat.','vel arcu. Curabitur ut odio vel est tempor bibendum.','$68.50','Altavista'),
+	(1051,'sed dolor. Fusce mi lorem,','Nunc lectus pede, ultrices a, auctor non, feugiat nec, diam.','$44.68','Altavista'),
+	(1052,'vel lectus. Cum','eu, ultrices sit amet, risus. Donec nibh enim, gravida sit amet, dapibus id, blandit at,','$82.08','Chami'),
+	(1053,'sociis natoque penatibus et magnis','odio a purus. Duis elementum, dui quis accumsan convallis, ante','$56.45','Chami'),
+	(1054,'tortor. Integer aliquam','Phasellus libero mauris, aliquam','$24.73','Microsoft'),
+	(1055,'Lorem ipsum dolor sit','Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien.','$27.94','Google'),
+	(1056,'viverra. Maecenas iaculis aliquet','nonummy ipsum non arcu. Vivamus sit amet risus. Donec egestas.','$72.91','Lavasoft'),
+	(1057,'faucibus orci luctus et','tincidunt nibh. Phasellus nulla. Integer','$66.71','Cakewalk'),
+	(1058,'risus.','auctor. Mauris vel turpis. Aliquam adipiscing lobortis risus.','$84.78','Borland'),
+	(1059,'Cras dictum','velit egestas lacinia. Sed','$97.42','Yahoo'),
+	(1060,'lectus','sem. Nulla interdum. Curabitur dictum. Phasellus in felis. Nulla tempor','$43.98','Lycos');
 INSERT INTO Corporate.ItemList([ItemIndex],[ItemName],[ItemDescription],[ItemPrice],[ItemVendor]) 
-	VALUES(1031,'et ultrices posuere','Nullam ut nisi a','$20.56','lacus'),
-	(1032,'venenatis lacus.','dictum. Proin eget odio. Aliquam vulputate ullamcorper magna. Sed eu eros. Nam consequat 
-		dolor vitae dolor. Donec fringilla. Donec feugiat metus sit','$44.88','neque. Sed'),
-	(1033,'mattis. Cras','iaculis enim, sit amet ornare lectus justo eu arcu. Morbi sit amet massa. Quisque porttitor 
-		eros nec tellus. Nunc lectus pede, ultrices','$68.61','erat, in'),
-	(1034,'parturient','vel lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus 
-		mus. Donec dignissim magna a tortor.','$66.98','Donec tempus, lorem'),
-	(1035,'vel,','Nam ac nulla. In tincidunt congue turpis. In condimentum. Donec at arcu. Vestibulum ante ipsum primis 
-		in faucibus orci luctus et ultrices','$79.82','nec, imperdiet'),
-	(1036,'ornare egestas ligula.','leo. Morbi neque tellus, imperdiet non, vestibulum nec, euismod in, dolor. Fusce 
-		feugiat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam auctor, velit eget','$11.31',
-		'arcu iaculis'),
-	(1037,'ultrices. Duis','dis parturient montes,','$43.78','tincidunt'),
-	(1038,'lacus. Mauris','est arcu ac orci. Ut semper pretium neque. Morbi quis urna. Nunc quis arcu vel quam',
-		'$8.07','eu enim.'),
-	(1039,'dui.','Sed neque. Sed eget lacus. Mauris non dui nec urna','$51.66','volutpat. Nulla'),
-	(1040,'rhoncus id, mollis','nibh dolor, nonummy ac, feugiat non, lobortis quis,','$57.01','mauris ut mi.');
+	VALUES(1061,'eu nibh','vel, vulputate eu, odio. Phasellus at augue','$9.47','Google'),
+	(1062,'tellus sem mollis dui, in','sit amet ultricies sem magna nec quam.','$32.10','Borland'),
+	(1063,'sollicitudin adipiscing ligula. Aenean gravida','Curabitur egestas nunc sed libero. Proin sed','$52.20','Apple Systems'),
+	(1064,'non, sollicitudin a, malesuada id,','lacus. Aliquam','$47.73','Lavasoft'),
+	(1065,'mollis. Duis sit amet diam','ultrices posuere cubilia Curae; Donec tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque',
+		'$9.59','Yahoo'),
+	(1066,'Donec est. Nunc ullamcorper,','malesuada fringilla est. Mauris eu turpis.','$50.36','Finale'),
+	(1067,'eget','a felis ullamcorper viverra.','$95.16','Cakewalk'),
+	(1068,'sit amet luctus','semper pretium neque. Morbi quis urna. Nunc quis arcu vel quam dignissim','$45.54','Borland'),
+	(1069,'dictum eu,','Mauris vestibulum, neque','$50.30','Apple Systems'),
+	(1070,'elit,','convallis dolor. Quisque tincidunt pede','$89.64','Chami'),
+	(1071,'amet massa. Quisque porttitor','nisl elementum purus, accumsan interdum libero dui nec','$82.58','Microsoft'),
+	(1072,'non','ut, molestie in, tempus eu, ligula. Aenean euismod','$23.07','Chami'),
+	(1073,'ullamcorper. Duis','cubilia Curae; Phasellus ornare. Fusce','$47.73','Yahoo'),
+	(1074,'imperdiet nec, leo. Morbi','tristique','$88.32','Apple Systems'),
+	(1075,'egestas,','tortor, dictum eu, placerat eget, venenatis a, magna. Lorem ipsum dolor sit amet,','$27.01','Macromedia'),
+	(1076,'adipiscing lobortis risus. In','fermentum metus. Aenean sed pede nec ante blandit viverra. Donec tempus, lorem fringilla',
+		'$90.43','Cakewalk'),
+	(1077,'Aliquam ultrices iaculis odio.','magna. Praesent interdum ligula eu enim. Etiam imperdiet dictum magna.','$92.37','Finale'),
+	(1078,'risus. Nunc ac sem','est mauris, rhoncus id, mollis nec, cursus a, enim. Suspendisse aliquet, sem','$11.31','Apple Systems'),
+	(1079,'at, velit.','fringilla, porttitor vulputate, posuere vulputate, lacus. Cras interdum.','$74.22','Apple Systems'),
+	(1080,'dui, nec tempus mauris','at augue id ante dictum cursus. Nunc mauris','$73.34','Sibelius');
 INSERT INTO Corporate.ItemList([ItemIndex],[ItemName],[ItemDescription],[ItemPrice],[ItemVendor]) 
-	VALUES(1041,'Donec','turpis egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque sed sem egestas 
-		blandit. Nam nulla magna, malesuada vel, convallis in, cursus et, eros. Proin','$43.33','purus. Nullam'),
-	(1042,'a','mollis. Integer tincidunt aliquam arcu. Aliquam ultrices iaculis odio. Nam interdum enim non nisi. 
-		Aenean','$0.91','eu lacus.'),
-	(1043,'eu odio','molestie orci tincidunt adipiscing. Mauris','$55.18','nisi.'),
-	(1044,'at lacus. Quisque','diam. Proin dolor. Nulla semper','$25.66','feugiat. Lorem ipsum'),
-	(1045,'quam vel sapien','In tincidunt congue turpis. In condimentum. Donec at arcu. Vestibulum','$60.94','elementum'),
-	(1046,'aliquet','dolor, tempus non, lacinia at,','$93.87','lobortis'),
-	(1047,'dis parturient montes,','malesuada vel, venenatis vel, faucibus id, libero. Donec consectetuer mauris id 
-		sapien. Cras dolor dolor, tempus non, lacinia at, iaculis quis,','$90.96','dictum eu, placerat'),
-	(1048,'libero.','molestie orci tincidunt adipiscing. Mauris molestie pharetra nibh. Aliquam ornare, libero at auctor 
-		ullamcorper, nisl arcu iaculis enim, sit','$40.82','convallis, ante'),
-	(1049,'Proin vel arcu','ante ipsum primis in faucibus orci luctus et','$95.72','orci'),
-	(1050,'mollis lectus pede','lobortis quam a felis ullamcorper viverra. Maecenas iaculis aliquet','$15.70',
-		'scelerisque, lorem');
-INSERT INTO Corporate.ItemList([ItemIndex],[ItemName],[ItemDescription],[ItemPrice],[ItemVendor]) 
-	VALUES(1051,'tristique pellentesque, tellus','In ornare sagittis felis. Donec tempor, est ac mattis semper, 
-		dui lectus rutrum urna, nec luctus felis','$76.52','Cras interdum. Nunc'),
-	(1052,'ultrices.','amet lorem semper auctor. Mauris vel turpis. Aliquam adipiscing lobortis risus. In mi pede, 
-		nonummy ut, molestie','$44.53','eu'),
-	(1053,'mauris','semper. Nam tempor diam dictum sapien. Aenean massa. Integer vitae nibh. Donec est mauris, 
-		rhoncus id,','$24.92','dolor dapibus gravida.'),
-	(1054,'morbi tristique senectus','est, mollis non, cursus non, egestas a, dui. Cras pellentesque. Sed dictum. Proin 
-		eget odio. Aliquam vulputate ullamcorper magna. Sed eu eros. Nam','$49.40','consectetuer euismod est'),
-	(1055,'magna.','iaculis odio. Nam interdum enim','$67.34','Donec porttitor'),
-	(1056,'ornare, elit elit','pretium et, rutrum non, hendrerit id, ante. Nunc mauris sapien, cursus in, hendrerit 
-		consectetuer, cursus et, magna. Praesent interdum ligula','$65.71','eu lacus. Quisque'),
-	(1057,'sollicitudin adipiscing','Vivamus nibh','$96.61','tortor at'),
-	(1058,'per conubia nostra,','vel lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur 
-		ridiculus mus. Donec dignissim magna a tortor. Nunc commodo auctor','$33.56','nec ante'),
-	(1059,'penatibus et','sapien. Cras dolor dolor, tempus non, lacinia at, iaculis quis, pede. Praesent eu dui. Cum',
-		'$14.74','Sed et'),
-	(1060,'turpis. Aliquam adipiscing','Ut tincidunt','$60.71','adipiscing');
-INSERT INTO Corporate.ItemList([ItemIndex],[ItemName],[ItemDescription],[ItemPrice],[ItemVendor]) 
-	VALUES(1061,'Morbi','ut ipsum ac mi eleifend','$84.03','tincidunt'),
-	(1062,'nulla magna, malesuada','Aliquam ultrices iaculis odio. Nam interdum enim non nisi. Aenean eget metus. In',
-		'$72.02','molestie orci'),
-	(1063,'orci tincidunt adipiscing.','mi eleifend egestas. Sed','$71.60','lobortis mauris.'),
-	(1064,'massa.','Duis','$66.81','In faucibus. Morbi'),
-	(1065,'nulla.','vulputate, lacus. Cras interdum. Nunc sollicitudin commodo ipsum. Suspendisse non leo. Vivamus nibh 
-		dolor, nonummy ac, feugiat non, lobortis quis,','$73.18','purus ac'),
-	(1066,'mus. Proin','urna. Vivamus molestie dapibus ligula. Aliquam erat volutpat. Nulla dignissim. Maecenas ornare 
-		egestas ligula. Nullam feugiat placerat velit. Quisque varius. Nam porttitor scelerisque','$44.80','aliquam 
-		adipiscing lacus.'),
-	(1067,'aliquam','magna a tortor. Nunc commodo auctor velit. Aliquam nisl. Nulla','$67.20','eu neque'),
-	(1068,'massa.','consequat auctor, nunc nulla vulputate dui, nec tempus mauris erat eget ipsum. Suspendisse sagittis. 
-		Nullam','$79.43','in molestie'),
-	(1069,'risus.','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam laoreet, libero et tristique 
-		pellentesque, tellus sem mollis dui, in','$71.96','Aliquam nec'),
-	(1070,'velit. Aliquam nisl.','lectus. Cum sociis natoque penatibus et','$61.41','auctor vitae,');
-INSERT INTO Corporate.ItemList([ItemIndex],[ItemName],[ItemDescription],[ItemPrice],[ItemVendor]) 
-	VALUES(1071,'sed','lorem vitae odio sagittis semper. Nam tempor diam dictum sapien. Aenean massa. Integer vitae nibh. 
-		Donec est','$17.53','Ut tincidunt'),
-	(1072,'Nullam suscipit, est','Curae; Donec tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque',
-		'$80.18','bibendum fermentum'),
-	(1073,'nulla','dictum. Phasellus in felis. Nulla tempor','$17.57','ut,'),
-	(1074,'ligula. Aliquam','turpis non enim. Mauris quis turpis vitae purus gravida sagittis. Duis gravida. 
-		Praesent eu nulla at sem molestie','$40.23','massa. Mauris'),
-	(1075,'Donec tincidunt.','adipiscing elit. Etiam laoreet, libero et tristique pellentesque, tellus sem mollis',
-		'$4.36','ornare,'),
-	(1076,'velit. Sed malesuada','vehicula','$38.57','Cras'),
-	(1077,'ultrices iaculis odio.','risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas 
-		a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc','$99.78','vestibulum'),
-	(1078,'cubilia Curae;','nec ante. Maecenas mi felis, adipiscing fringilla, porttitor vulputate, posuere vulputate, 
-		lacus. Cras interdum. Nunc sollicitudin','$11.51','adipiscing. Mauris molestie'),
-	(1079,'ut,','malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. 
-		Integer mollis. Integer tincidunt aliquam arcu.','$28.17','sagittis'),
-	(1080,'nulla. Integer','Ut','$8.91','Quisque porttitor eros');
-INSERT INTO Corporate.ItemList([ItemIndex],[ItemName],[ItemDescription],[ItemPrice],[ItemVendor]) 
-	VALUES(1081,'ridiculus mus.','velit eu sem. Pellentesque ut ipsum ac mi eleifend egestas. Sed pharetra, felis eget 
-		varius ultrices, mauris ipsum porta elit, a feugiat tellus','$85.92','lacus pede sagittis'),
-	(1082,'magnis dis parturient','amet ornare lectus justo eu arcu. Morbi sit amet massa. Quisque porttitor eros',
-		'$46.48','eleifend'),
-	(1083,'molestie tellus. Aenean','tortor, dictum eu, placerat eget, venenatis a, magna. Lorem','$8.91','ante dictum 
-		cursus.'),
-	(1084,'pharetra','vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et 
-		netus et malesuada fames ac turpis egestas.','$40.80','Quisque porttitor'),
-	(1085,'aliquet lobortis, nisi','aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. 
-		Quisque','$87.52','fermentum vel, mauris.'),
-	(1086,'nibh dolor,','feugiat placerat velit. Quisque varius. Nam porttitor scelerisque neque. Nullam nisl. Maecenas 
-		malesuada fringilla est. Mauris eu turpis. Nulla aliquet. Proin velit. Sed malesuada','$47.19','tellus, imperdiet 
-		non,'),
-	(1087,'mi','tempor, est ac mattis semper, dui lectus rutrum urna,','$20.60','tempor'),
-	(1088,'ipsum primis in','ligula. Nullam enim.','$6.92','tellus. Suspendisse sed'),
-	(1089,'torquent per conubia','metus urna convallis erat, eget tincidunt dui augue eu tellus. Phasellus elit pede, 
-		malesuada vel, venenatis vel, faucibus id, libero. Donec','$24.53','risus. In'),
-	(1090,'dolor elit,','feugiat. Sed nec metus facilisis lorem tristique aliquet. Phasellus fermentum convallis ligula. 
-		Donec luctus aliquet odio. Etiam ligula tortor, dictum eu, placerat eget, venenatis','$96.18','metus eu');
-INSERT INTO Corporate.ItemList([ItemIndex],[ItemName],[ItemDescription],[ItemPrice],[ItemVendor]) 
-	VALUES(1091,'ipsum. Donec','dui. Cras pellentesque. Sed dictum. Proin eget odio. Aliquam vulputate ullamcorper 
-		magna. Sed eu eros. Nam','$35.69','turpis'),
-	(1092,'tortor. Integer','Nunc mauris. Morbi non sapien molestie orci tincidunt adipiscing. Mauris molestie pharetra 
-		nibh. Aliquam ornare, libero at auctor ullamcorper, nisl arcu','$4.91','tortor,'),
-	(1093,'laoreet ipsum.','adipiscing. Mauris molestie pharetra nibh. Aliquam ornare, libero at auctor ullamcorper, 
-		nisl arcu iaculis enim, sit amet ornare lectus justo eu arcu. Morbi','$17.79','sit amet metus.'),
-	(1094,'adipiscing','sed pede nec ante blandit viverra. Donec tempus, lorem','$67.69','eu, euismod'),
-	(1095,'libero est, congue','dignissim. Maecenas ornare egestas ligula. Nullam feugiat placerat velit. Quisque varius. 
-		Nam porttitor scelerisque neque. Nullam nisl. Maecenas malesuada fringilla est. Mauris eu','$99.36','a,'),
-	(1096,'Proin','sem, vitae aliquam eros turpis','$49.32','vitae, erat. Vivamus'),
-	(1097,'at augue','elit elit','$47.72','tincidunt'),
-	(1098,'Integer','vel, mauris. Integer sem elit, pharetra ut, pharetra sed, hendrerit a, arcu. Sed et libero. Proin mi. 
-		Aliquam','$28.25','ac,'),
-	(1099,'Nullam lobortis','non, luctus sit amet, faucibus ut, nulla. Cras','$4.39','risus quis diam'),
-	(1100,'nec,','elementum sem, vitae aliquam eros turpis non enim. Mauris quis turpis vitae purus gravida sagittis. 
-		Duis gravida. Praesent eu nulla at sem molestie','$89.48','magna.');
+	VALUES(1081,'Donec','ipsum','$59.00','Lavasoft'),
+	(1082,'vitae, erat. Vivamus nisi.','Nam interdum enim non nisi. Aenean eget metus. In nec orci. Donec nibh.','$98.26','Adobe'),
+	(1083,'ipsum. Phasellus vitae mauris sit','parturient montes, nascetur ridiculus mus. Proin vel arcu eu odio tristique pharetra. Quisque 
+		ac libero','$29.70','Chami'),
+	(1084,'ipsum primis in faucibus orci','dui, semper et, lacinia vitae, sodales at, velit. Pellentesque ultricies dignissim lacus.',
+		'$8.74','Sibelius'),
+	(1085,'vitae, erat.','odio a purus. Duis elementum, dui','$85.25','Macromedia'),
+	(1086,'metus.','magna sed dui. Fusce aliquam, enim nec tempus scelerisque, lorem ipsum sodales purus, in molestie','$16.67','Microsoft'),
+	(1087,'Cras vulputate velit','vel,','$78.26','Adobe'),
+	(1088,'mattis. Integer eu','ac, fermentum vel, mauris. Integer sem','$54.14','Lavasoft'),
+	(1089,'tempor','ac nulla. In tincidunt congue turpis. In condimentum. Donec at arcu. Vestibulum','$47.07','Lycos'),
+	(1090,'pede blandit','eu enim. Etiam imperdiet','$69.61','Chami'),
+	(1091,'mauris sagittis placerat. Cras dictum','ipsum. Phasellus vitae mauris sit amet lorem semper auctor. Mauris','$48.00','Apple Systems'),
+	(1092,'quis massa. Mauris','scelerisque neque sed sem','$52.15','Borland'),
+	(1093,'Proin non','Cras pellentesque. Sed dictum. Proin','$31.14','Lavasoft'),
+	(1094,'ipsum. Donec','commodo tincidunt nibh. Phasellus nulla. Integer vulputate,','$32.94','Lycos'),
+	(1095,'iaculis enim, sit amet','dolor. Fusce','$5.43','Finale'),
+	(1096,'Sed eget','eu tempor erat neque non quam. Pellentesque habitant morbi tristique senectus et','$40.28','Lavasoft'),
+	(1097,'Nunc ac sem','sollicitudin orci sem eget massa. Suspendisse eleifend. Cras sed leo. Cras vehicula','$38.27','Sibelius'),
+	(1098,'Aliquam','Quisque imperdiet, erat nonummy ultricies ornare, elit elit fermentum risus, at fringilla','$71.68','Chami'),
+	(1099,'ultrices posuere','massa. Integer vitae nibh. Donec est mauris, rhoncus id, mollis nec, cursus','$32.03','Cakewalk'),
+	(1100,'et netus et','adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus. Cras interdum. Nunc sollicitudin commodo ipsum. 
+		Suspendisse non','$49.38','Apple Systems');
+SET IDENTITY_INSERT Corporate.ItemList OFF
 
 --Employees
+SET IDENTITY_INSERT Corporate.Employees ON
 INSERT INTO Corporate.Employees([EmployeeId],[FirstName],[MiddleInit],[LastName],[Title],[Supervisor],[isManager],[isActive])
 	VALUES(1,'Gary','E','Gygax','Game Master',NULL,1,1),
 	(2,'Ray','A','Eichler','Store Manager',1,1,1),
 	(3,'Alex','B','Sirtz','Store Manager',1,1,1),
 	(4,'Neil','E','Davis','Store Manager',1,1,1),
 	(5,'Joe','H','Reeve','Store Manager',1,1,1),
-	(
+	(6,'James',NULL,'Reid','Store Manager',1,1,1),
+	(7,'Ferdinand','U','Tyson','Warehouse Manager',1,1,1),
+	(8,'Barbara','J','Ray','Corporate',6,0,1),
+	(9,'Nissim','S','Foster','Corporate',5,0,0),
+	(10,'Nina','F','Oliver','Warehouse',6,0,0),
+	(11,'Gary','T','Day','Warehouse',4,0,1),
+	(12,'Patricia','B','Cotton','Warehouse',2,0,1),
+	(13,'Noble','P','Frost','Other',3,0,1),
+	(14,'Ashton','L','Mclaughlin','Corporate',6,0,0),
+	(15,'Hadley','V','Barnes','Store Associate',1,0,1),
+	(16,'Connor','S','Goff','Warehouse',6,0,1),
+	(17,'Abraham','K','Golden','Administrative',5,0,0),
+	(18,'Helen','D','Lang','Warehouse',2,0,1),
+	(19,'Jerry','V','Dillard','Administrative',1,0,0),
+	(20,'Vaughan','I','Ayala','Corporate',5,0,0),
+	(21,'Kevin','Y','Melendez','Corporate',4,0,1),
+	(22,'Ross','A','Cooper','Other',6,0,0),
+	(23,'Malcolm','I','Orr','Other',3,0,1),
+	(24,'Justin','R','Wilcox','Corporate',5,0,0),
+	(25,'Nicole','Y','Aguirre','Other',2,0,1),
+	(26,'Noelle','G','Riley','Store Associate',6,0,1);
+SET IDENTITY_INSERT Corporate.Employees OFF
+
+--Stores
+INSERT INTO Corporate.Stores([StoreId],[StoreManager],[StoreStAddress],[StoreCity],[StoreState],[StoreZip]) 
+	VALUES(10,2,'Ap #562-7322 Nec Ave','Fraserburgh','TX','72138'),
+	(11,3,'3083 Mollis. Av.','Oban','TX','99312'),
+	(12,4,'588-2223 Nullam Av.','Khanewal','CA','99516'),
+	(13,5,'Ap #470-3897 Ac Rd.','Machilipatnam','CA','74621'),
+	(14,6,'P.O. Box 375, 2099 Ut St.','Korbach','CO','47941')
+
+--Customers
+SET IDENTITY_INSERT Customer.Customers ON
+INSERT INTO Customer.Customers([CustomerIndex],[FirstName],[LastName],[StreetAddress],[City],[State],[Zip],[Email],[Phone],[PreferredStore]) 
+	VALUES(1,'Kimberly','Benson','2424 Donec Rd.','Ceuta','OR','63591','ultrices.iaculis.odio@utnisi.com','16980627 -0519','13'),
+	(2,'Sopoline','Casey','267-1290 Nisi Avenue','Villanovafranca','OR','94176','a@Maecenasliberoest.ca','16870826 -3028','14'),
+	(3,'Callie','Carroll','Ap #868-161 Ipsum Road','Neerheylissem','OR','17269','nisi@liberolacus.org','16230923 -9776','13'),
+	(4,'Mara','Goodwin','Ap #429-428 Eu St.','Fossato Serralta','AZ','45683','accumsan.sed.facilisis@nisiCum.co.uk','16510106 -3880','12'),
+	(5,'Philip','Kaufman','P.O. Box 762, 9665 Nulla. Rd.','Allentown','OR','82464','bibendum.ullamcorper@nullaDonec.com','16540530 -6449','14'),
+	(6,'Martin','Ellison','895-2072 Porttitor Ave','Racine','CA','79596','mattis.semper@atlacus.co.uk','16110221 -3772','11'),
+	(7,'Keegan','Hopper','756-8724 Egestas Rd.','Bevilacqua','AK','89364','ipsum.dolor.sit@afeugiat.ca','16380110 -2751','12'),
+	(8,'Hoyt','Mooney','Ap #772-9999 Enim. Avenue','Cambridge','AZ','63559','dignissim.magna@pede.org','16430310 -1960','12'),
+	(9,'Simon','Frazier','P.O. Box 637, 8004 Eros Road','Jalna','WA','67698','libero@ac.org','16810813 -6709','12'),
+	(10,'MacKenzie','French','630-4727 Pede Rd.','Grembergen','TX','22075','Fusce.dolor.quam@Quisque.org','16040623 -0656','10'),
+	(11,'Fiona','Guthrie','133-4022 Auctor Road','Chepstow','TX','52855','habitant.morbi.tristique@quisurnaNunc.edu','16261019 -2441','11'),
+	(12,'Merrill','Boyle','P.O. Box 790, 4319 Eu, Rd.','Papudo','OR','31552','eget@dictum.com','16160816 -0162','11'),
+	(13,'Kristen','Caldwell','Ap #511-9318 Pharetra, St.','Sonipat','AZ','17642','Aliquam.fringilla.cursus@id.edu','16520813 -9203','14'),
+	(14,'Xantha','Austin','898-4610 Est, Rd.','Pfungstadt','WA','41905','lectus@ipsum.co.uk','16771116 -7895','14'),
+	(15,'Evelyn','Stout','P.O. Box 825, 3174 Cum Rd.','Tonalá','AZ','50260','risus@nibhlaciniaorci.co.uk','16950602 -7763','11'),
+	(16,'Ila','Puckett','Ap #461-9360 Mauris Street','Kinross','AZ','72933','luctus.lobortis.Class@In.org','16540201 -6967','11'),
+	(17,'Ava','Stanton','Ap #287-7566 Sollicitudin Road','Cambridge','TX','20159','lorem@vehicularisus.com','16850730 -5723','11'),
+	(18,'Laura','West','Ap #603-6906 Ultricies Street','Sacramento','OR','74769','Cras.dictum@id.net','16420214 -4335','14'),
+	(19,'Lani','Cooke','8346 Et St.','Yeongcheon','TX','10811','Nam.ligula@viverra.org','16400508 -3052','12'),
+	(20,'Carissa','Mathis','Ap #783-5430 Elit Rd.','Neder-Over-Heembeek','OR','21473','Vivamus.euismod@tellus.ca','16640213 -9841','13');
+INSERT INTO Customer.Costumers([CustomerIndex],[FirstName],[LastName],[StreetAddress],[City],[State],[Zip],[Email],[Phone],[PreferredStore]) 
+	VALUES(21,'Maia','Barker','454-9899 Pede. Road','Cuccaro Vetere','WA','50972','vitae.risus.Duis@Namligula.org','16691009 -6541','13'),
+	(22,'Roary','Roach','287-3066 Vestibulum Street','Aulnay-sous-Bois','TX','15469','amet.consectetuer.adipiscing@quisturpisvitae.ca',
+		'16420210 -5765','14'),
+	(23,'Curran','Donovan','P.O. Box 215, 7600 Ac, Rd.','Cambridge','OR','43131','elit.Curabitur@metus.ca','16081209 -6303','10'),
+	(24,'Victor','Gonzalez','P.O. Box 953, 8517 Enim St.','Zaffelare','TX','47625','elit.pellentesque.a@Aliquamornare.co.uk','16850615 -4544',
+		'10'),
+	(25,'Carlos','Hall','9129 Magna. Rd.','Tumaco','AZ','55598','et.nunc@condimentum.edu','16230116 -9252','11'),
+	(26,'Roth','Pitts','4458 Et, Road','Kashira','AZ','24924','sed@liberoettristique.org','16270823 -3313','11'),
+	(27,'Risa','Richards','849-6357 Est Rd.','Rüsselsheim','AZ','30733','elit.pretium@Nullamscelerisque.net','16970511 -8611','12'),
+	(28,'Madaline','Luna','866-2318 Mauris Ave','Koekelberg','WA','42187','non.ante.bibendum@necquam.ca','16201213 -8380','10'),
+	(29,'Rafael','Cote','Ap #475-2688 Vivamus Road','Opprebais','TX','25627','Donec.felis@volutpatornare.org','16210510 -9710','12'),
+	(30,'Forrest','Lamb','7991 Mauris, St.','Detroit','OR','61763','erat.nonummy.ultricies@magnaa.ca','16771104 -6974','13'),
+	(31,'Sydnee','Ortega','8621 Curabitur Rd.','CŽroux-Mousty','CO','73935','bibendum.sed@semvitae.co.uk','16580712 -3558','12'),
+	(32,'Uriah','Decker','Ap #217-4361 Per St.','Gravataí','TX','84101','id.blandit@tinciduntaliquamarcu.net','16250202 -9321','12'),
+	(33,'Deanna','Mckinney','685-4324 Mi. Rd.','Frankfurt am Main','OR','72627','et.nunc@acfacilisis.co.uk','16160812 -0620','11'),
+	(34,'Amber','Winters','Ap #604-9330 Enim Av.','Tucson','TX','21245','est@ullamcorper.net','16790404 -5775','13'),
+	(35,'TaShya','Crosby','235-4380 Laoreet Road','Warisoulx','TX','16612','molestie.in@tempusmauris.edu','16650511 -4543','10'),
+	(36,'Ainsley','Huffman','Ap #267-3693 Sapien, Ave','Karak','CA','38462','luctus@nullaDonecnon.com','16970716 -2245','12'),
+	(37,'Wayne','Holman','562-8902 Faucibus Rd.','Cour-sur-Heure','OR','40289','eleifend@Maecenas.ca','16180820 -9934','14'),
+	(38,'Lucius','Kirk','4720 Massa. Av.','Volokolamsk','FL','28963','ut.erat.Sed@dictumPhasellus.ca','16910304 -7677','10'),
+	(39,'Josephine','Graham','P.O. Box 842, 9680 Posuere Rd.','Enschede','WA','82991','risus@Curabiturdictum.com','16041002 -6827','13'),
+	(40,'Brianna','Clay','362-8102 Non, Rd.','Wonju','TX','86442','ornare@fringilla.co.uk','16420620 -3640','11');
+INSERT INTO Customer.Costumers([CustomerIndex],[FirstName],[LastName],[StreetAddress],[City],[State],[Zip],[Email],[Phone],[PreferredStore]) 
+	VALUES(41,'Molly','Miles','P.O. Box 871, 247 Est, Rd.','Drayton Valley','CA','95752','Curabitur@tincidunt.co.uk','16560418 -0355','12'),
+	(42,'Rowan','Suarez','Ap #899-643 Nunc Avenue','Bergen','AZ','40686','Donec@nec.ca','16080204 -5971','14'),
+	(43,'Lacey','Craft','8916 Fusce Street','Vietri di Potenza','TX','49027','placerat.orci@accumsanconvallisante.ca','16740805 -8415','11'),
+	(44,'Carson','Huff','4805 Ipsum. St.','Bostaniçi','AZ','22912','sed@massaSuspendisse.edu','16041226 -5118','12'),
+	(45,'Brianna','Mcgowan','Ap #188-7427 Mi. Rd.','Essex','CO','64582','Aliquam@vehicula.co.uk','16020306 -4712','14'),
+	(46,'Jena','Swanson','Ap #254-8362 Pretium Avenue','Cabo de Hornos','AK','40916','ligula.eu@luctussitamet.co.uk','16990111 -3838','11'),
+	(47,'Xanthus','Mcdowell','490-5194 Enim. St.','Segni','AZ','29581','justo.Proin.non@Sed.co.uk','16700124 -5385','13'),
+	(48,'Rashad','Hopkins','Ap #691-9366 Lobortis. Ave','Neder-Over-Heembeek','WA','74337','lacinia.orci@egetmagnaSuspendisse.com',
+		'16140602 -1780','13'),
+	(49,'Miranda','Castillo','162 Ligula. St.','Vadodara','CA','67333','quis@vehicula.net','16881220 -1369','11'),
+	(50,'Melissa','Foreman','Ap #439-5364 Ornare Rd.','Onega','AK','75436','augue@malesuadavel.edu','16591019 -2912','12'),
+	(51,'Hillary','Anderson','2652 Phasellus Av.','Dilsen-Stokkem','AK','12318','aliquam.iaculis.lacus@Nullamvelitdui.com','16370621 -3059',
+		'12'),
+	(52,'Quamar','Carlson','P.O. Box 187, 2643 Et Rd.','Elbląg','AK','65582','Donec@Crasvehiculaaliquet.org','16661024 -5828','10'),
+	(53,'Jael','Phillips','8599 Velit Rd.','Davenport','CO','87137','lobortis.ultrices.Vivamus@ornaresagittis.ca','16660608 -0288','11'),
+	(54,'Yetta','Rhodes','9708 Metus. St.','Lahore','CO','56846','diam@nunc.ca','16950614 -2737','14'),
+	(55,'Shaine','Simpson','982-612 Est Ave','Obaix','AK','85571','natoque.penatibus@Quisque.ca','16640311 -3795','12'),
+	(56,'Beau','Campos','Ap #774-5985 Proin Av.','Orai','OR','20824','dolor@Vestibulumaccumsan.co.uk','16691002 -5219','13'),
+	(57,'Bevis','Nolan','457-9965 Sed Ave','Vallenar','FL','96996','faucibus.id.libero@sem.org','16840502 -0838','12'),
+	(58,'Linus','Maxwell','595-3559 Cubilia St.','Nijkerk','TX','49389','Quisque.nonummy@pharetra.net','16770807 -0003','10'),
+	(59,'Naida','Hardy','P.O. Box 101, 6560 Donec Avenue','Verrebroek','CO','49925','pede@sociisnatoque.edu','16130401 -6809','14'),
+	(60,'Wyatt','Bowers','P.O. Box 265, 2772 Euismod St.','Çarşamba','WA','59051','mauris@posuerecubiliaCurae.com','16331209 -1782','13');
+INSERT INTO Customer.Costumers([CustomerIndex],[FirstName],[LastName],[StreetAddress],[City],[State],[Zip],[Email],[Phone],[PreferredStore]) 
+	VALUES(61,'Kaye','Emerson','5683 Ornare Av.','St. Pölten','WA','55902','ipsum.sodales@convallis.org','16310717 -6947','14'),
+	(62,'Thane','Clemons','2824 Velit. Street','North Vancouver','CA','81664','adipiscing.Mauris.molestie@molestieSed.net','16190416 -7226',
+		'10'),
+	(63,'Carson','Conrad','Ap #507-9453 Cursus Avenue','Nodebais','OR','18217','eu.tellus.Phasellus@Suspendissealiquetmolestie.edu',
+		'16060409 -2692','11'),
+	(64,'Gareth','Travis','P.O. Box 612, 1707 Mauris Road','Vijayawada','WA','49167','tristique.senectus@justoPraesentluctus.edu',
+		'16821108 -6585','10'),
+	(65,'Ruby','Ochoa','421-6984 Nam Rd.','Imst','AK','26320','semper.dui.lectus@laoreetposuere.org','16741025 -8821','11'),
+	(66,'Sonia','Trujillo','280-5342 Donec Ave','Cambridge Bay','CA','60094','arcu@erat.com','16190510 -2107','11'),
+	(67,'Shelly','Wiggins','5353 Id Av.','Pudahuel','TX','99149','et.netus.et@nuncidenim.edu','16500516 -4495','14'),
+	(68,'Quinn','Leblanc','P.O. Box 474, 1073 Natoque St.','Township of Minden Hills','AK','51537','pellentesque.eget@ideratEtiam.co.uk',
+		'16420207 -7378','10'),
+	(69,'TaShya','Holt','P.O. Box 159, 7742 Tortor Road','Gadag Betigeri','WA','79239','nec.urna.et@placeratvelit.co.uk','16991119 -9140',
+		'14'),
+	(70,'Malcolm','James','997-6369 Sed, Street','Saint-Brieuc','TX','57664','Cum.sociis.natoque@semper.ca','16360402 -4780','10'),
+	(71,'Lani','Jacobs','7569 Dui. Street','Maracalagonis','AK','34856','vitae.purus.gravida@loremfringillaornare.edu','16390106 -2657','14'),
+	(72,'Larissa','Bird','1350 A, Avenue','Moustier-sur-Sambre','AZ','95951','tristique@dolor.ca','16160610 -7314','10'),
+	(73,'Hedda','Barnes','Ap #514-2047 Nibh. Street','Trinità d''Agultu e Vignola','WA','77057','Suspendisse.dui.Fusce@velnisl.com',
+		'16920717 -3692','13'),
+	(74,'Hadassah','Flowers','396 Non Rd.','Stockerau','AK','75577','facilisis.non.bibendum@pedePraesenteu.ca','16620927 -3108','10'),
+	(75,'Nadine','Duran','6967 Eget, Street','Sint-Joost-ten-Node','FL','96516','Donec.felis@auctorvelit.co.uk','16040615 -9376','13'),
+	(76,'Gannon','Buck','122-9820 Id Rd.','Imst','FL','33914','rhoncus.id.mollis@tellusnonmagna.ca','16950930 -0696','10'),
+	(77,'Salvador','Rosa','Ap #806-7156 Elit, Street','Birmingham','AK','41129','et.commodo.at@ullamcorpervelit.org','16480928 -4161','13'),
+	(78,'Ivana','Holcomb','Ap #691-553 Dictum Ave','Longano','WA','38770','malesuada.malesuada@loremtristique.edu','16431114 -8912','10'),
+	(79,'Ramona','Lee','1505 Vehicula. Road','Beauvechain','OR','89424','pulvinar.arcu@euismodenim.com','16690922 -3569','12'),
+	(80,'Minerva','Burks','Ap #944-2219 Nullam Rd.','Frigento','WA','90360','ut.mi@vehicula.edu','16860519 -9416','13');
+INSERT INTO Customer.Costumers([CustomerIndex],[FirstName],[LastName],[StreetAddress],[City],[State],[Zip],[Email],[Phone],[PreferredStore]) 
+	VALUES(81,'Russell','Marsh','5316 Sem Avenue','Ladispoli','FL','18971','ut@etmagnisdis.edu','16850527 -2255','11'),
+	(82,'Dana','Hardy','7556 Mauris Av.','Carbonear','TX','67913','Vestibulum.ante@Aeneangravidanunc.co.uk','16760725 -0110','14'),
+	(83,'Brenna','Buchanan','Ap #724-8712 Auctor Ave','Camarones','CO','89501','mauris@ultricesmauris.co.uk','16630805 -6180','12'),
+	(84,'Duncan','Riley','P.O. Box 115, 5353 Porttitor Street','Nanton','WA','66476','netus.et.malesuada@faucibusut.net','16040812 -1366',
+		'14'),
+	(85,'Imogene','Potter','4248 Lobortis Av.','Rignano Garganico','FL','22429','ornare@natoque.org','16811216 -8060','11'),
+	(86,'Selma','Flynn','215-7857 Eget, St.','Queenstown','CA','55330','tellus.imperdiet.non@Aeneanmassa.ca','16800503 -6135','14'),
+	(87,'Steven','Maynard','6525 Curabitur Ave','Bruderheim','CO','29821','In.tincidunt.congue@utipsum.ca','16491114 -8031','14'),
+	(88,'Beau','Walters','Ap #659-5992 Et St.','Los Muermos','CO','40034','tempor.lorem.eget@egetipsum.ca','16920706 -3794','11'),
+	(89,'Dolan','Mcpherson','762-7019 Semper St.','Bonnyville','CO','36776','et@cursus.org','16041018 -6399','14'),
+	(90,'Inga','Berg','Ap #513-1334 Elit Avenue','Marchihue','CO','48349','molestie@ultricesposuerecubilia.co.uk','16110220 -3104','14'),
+	(91,'Yvette','Meyers','Ap #918-3674 Ornare, Ave','Dzerzhinsky','OR','59373','ante.ipsum.primis@Nuncpulvinararcu.org','16180820 -5551',
+		'12'),
+	(92,'Marvin','Tyson','Ap #625-4540 Facilisis St.','Fino Mornasco','WA','81879','nisl.Quisque@hendreritneque.ca','16470929 -5226','12'),
+	(93,'Deirdre','Duran','P.O. Box 914, 3840 Cras Road','Fontecchio','FL','42261','orci@fringillaest.com','16181209 -1096','11'),
+	(94,'Yolanda','Cole','3790 Elit. Avenue','Challand-Saint-Victor','AZ','30503','Morbi.non@esttempor.edu','16060604 -2174','14'),
+	(95,'Karly','Bean','558-7522 Nec, St.','Blankenfelde-Mahlow','AZ','92329','lectus@dictumultriciesligula.net','16590212 -8288','13'),
+	(96,'Walker','Howard','P.O. Box 620, 7335 Nam Street','Parndorf','AZ','97359','non@pharetrafeliseget.org','16570227 -8333','14'),
+	(97,'Rosalyn','Pena','P.O. Box 211, 7060 Velit Av.','Ponoka','AK','11986','erat.Sed@accumsansed.com','16641205 -7371','10'),
+	(98,'Fuller','Macdonald','2378 Gravida Rd.','Gretna','CO','81653','ullamcorper@euultricessit.co.uk','16220314 -5954','10'),
+	(99,'Shafira','Rivers','Ap #451-2807 Cum Av.','Medio Atrato','CA','49343','Nunc@diamluctuslobortis.ca','16920115 -0134','13'),
+	(100,'Evelyn','Head','4359 Lectus Road','San Juan (San Juan de Tibás)','AZ','42714','in.magna@aliquet.com','16290711 -3944','11');
+SET IDENTITY_INSERT Customer.Customers OFF

@@ -60,7 +60,7 @@ namespace Project0.library
         {
             get
             {
-                string _tempPhone = _storePhone.Insert(0, "(");
+                return _storePhone;
             }
         }
     }

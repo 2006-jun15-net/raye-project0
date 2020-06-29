@@ -36,8 +36,8 @@ GO
 
 --DROP Table Corporate.OrderDetails
 CREATE TABLE Corporate.OrderInvoice (InvoiceLineNumber INT PRIMARY KEY IDENTITY (1,1),
-	OrderId UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Corporate.Orders (OrderId),
-	ItemId INT CONSTRAINT FOREIGN KEY REFERENCES Corporate.ItemList (ItemIndex),
+	OrderId CHAR CONSTRAINT OrderId_to_OrderId_FK FOREIGN KEY REFERENCES Corporate.Orders (OrderId) ON UPDATE CASCADE,
+	ItemId INT CONSTRAINT ItemId_to_ItemIndex FOREIGN KEY REFERENCES Corporate.ItemList (ItemIndex) ON UPDATE CASCADE,
 	ItemQuantity INT)
 
 --DROP TABLE Corporate.VendorList
@@ -77,7 +77,7 @@ CREATE TABLE Corporate.EmployeeDetails (EmployeeId INT UNIQUE FOREIGN KEY
 	CHECK ((EmployeeZip > 9999) AND (EmployeeZip < 100000)))
 
 --DROP TABLE Customer.Customers
-CREATE TABLE Customer.Costumers (CustomerIndex INT PRIMARY KEY IDENTITY (1,1),
+CREATE TABLE Customer.Customers (CustomerIndex INT PRIMARY KEY IDENTITY (1,1),
 	FirstName NVARCHAR(100),
 	LastName NVARCHAR(100),
 	StreetAddress NVARCHAR(150),
@@ -91,11 +91,11 @@ CREATE TABLE Customer.Costumers (CustomerIndex INT PRIMARY KEY IDENTITY (1,1),
 
 --DROP TABLE Customer.Orders
 CREATE TABLE Customer.Orders (OrderIndex CHAR CONSTRAINT Customer_to_Orders_FK FOREIGN KEY REFERENCES Corporate.Orders(OrderId),
-	InvoiceLineNumber INT FOREIGN KEY REFERENCES Corporate.OrderDetails (InvoiceLineNumber))
+	InvoiceLineNumber INT CONSTRAINT LineNumber_to_OrderId_FK FOREIGN KEY REFERENCES Corporate.OrderInvoice (InvoiceLineNumber))
 
 GO
 ALTER TABLE Corporate.ItemList ADD CONSTRAINT VendorName_FK
-	FOREIGN KEY (ItemList) REFERENCES Corporate.VendorList (VendorName)
+	FOREIGN KEY (ItemVendor) REFERENCES Corporate.VendorList (VendorName)
 
 ALTER TABLE Corporate.Stores ADD CONSTRAINT Manager_FK
 	FOREIGN KEY (StoreManager) REFERENCES Corporate.Employees (EmpoyeeId)
