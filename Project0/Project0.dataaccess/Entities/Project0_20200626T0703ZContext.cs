@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using System.Data.Entity;
 
 namespace Project0.DataAccess.Entities
 {
@@ -50,6 +51,7 @@ namespace Project0.DataAccess.Entities
                     .HasConstraintName("StoreReviewed_to_Store_FK");
             });
 
+           // modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Entity<Customers>(entity =>
             {
                 entity.HasKey(e => e.CustomerIndex)

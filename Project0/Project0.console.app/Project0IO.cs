@@ -2,7 +2,7 @@
 
 namespace Project0.console.app
 {
-    class Program
+    class Project0IO
     {
         static void Main(string[] args)
         {

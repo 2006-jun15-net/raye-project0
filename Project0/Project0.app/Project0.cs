@@ -1,12 +1,33 @@
 ﻿using System;
+using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using Project0.DataAccess.Entities;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Project0.app
 {
     class Program
     {
+        public static readonly ILoggerFactory MyLogFactory = LoggerFactory.Create(LogBuilder => LogBuilder.AddConsole());
+
+        public static readonly DbContextOptions<Project0_20200626T0703ZContext> Options =
+            new DbContextOptionsBuilder<Project0_20200626T0703ZContext>().UseLoggerFactory(MyLogFactory)
+            .UseSqlServer(SecretConfiguration.ConnectionString).Options;
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            using var context = new Project0_20200626T0703ZContext(Options);
+
+            List<Customers> cust = context.Customers
+                .FromSqlInterpolated($"SELECT FirstName, LastName, Email FROM Customers")
+                .OrderBy(ln => ln.LastName).ToList();
+
+            foreach (var x in cust)
+                Console.WriteLine(cust);
+                
 
             Console.WriteLine("Program Complete");
         }
