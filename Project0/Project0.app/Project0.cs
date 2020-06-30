@@ -21,12 +21,21 @@ namespace Project0.app
 
             using var context = new Project0_20200626T0703ZContext(Options);
 
-            List<Customers> cust = context.Customers
-                .FromSqlInterpolated($"SELECT FirstName, LastName, Email FROM Customers")
-                .OrderBy(ln => ln.LastName).ToList();
+            // using var conext2 = new Project0_20200626T0703ZContext(Options);
 
-            foreach (var x in cust)
-                Console.WriteLine(cust);
+            //Console.WriteLine(context.Customers);
+            List<Customers> cList = new List<Customers>();
+            cList.AddRange(context.Customers
+                .FromSqlRaw("SELECT * FROM CUSTOMERS")
+                .OrderBy(c => c.LastName)
+                .ToList());
+
+            //List<Customers> cust = context.Customers
+            //    .FromSqlInterpolated($"SELECT FirstName, LastName, Email FROM Customers")
+            //    .OrderBy(ln => ln.LastName).ToList();
+
+            //foreach (var x in cust)
+            //    Console.WriteLine(cust);
                 
 
             Console.WriteLine("Program Complete");

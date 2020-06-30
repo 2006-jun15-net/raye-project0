@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Xml.Serialization;
 
-namespace Project0.DataAccess.Entities
+namespace Project0.DataAccess.Enities
 {
-    [Table("Customers", Schema = "Customer")]
     public partial class Customers
     {
+        public Customers()
+        {
+            Orders = new HashSet<Orders>();
+        }
+
         public int CustomerIndex { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -20,5 +22,6 @@ namespace Project0.DataAccess.Entities
         public int? PreferredStore { get; set; }
 
         public virtual Stores PreferredStoreNavigation { get; set; }
+        public virtual ICollection<Orders> Orders { get; set; }
     }
 }

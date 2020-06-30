@@ -2,22 +2,20 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Project0.DataAccess.Entities
+namespace Project0.DataAccess.Enities
 {
-    public partial class Project0_20200626T0703ZContext : DbContext
+    public partial class Project0Context : DbContext
     {
-        public Project0_20200626T0703ZContext()
+        public Project0Context()
         {
         }
 
-        public Project0_20200626T0703ZContext(DbContextOptions<Project0_20200626T0703ZContext> options)
+        public Project0Context(DbContextOptions<Project0Context> options)
             : base(options)
         {
         }
 
         public virtual DbSet<CustomerFeedback> CustomerFeedback { get; set; }
-        //public virtual DbSet<Customers> Customers { get; set; }
-
         public virtual DbSet<Customers> Customers { get; set; }
         public virtual DbSet<EmployeeDetails> EmployeeDetails { get; set; }
         public virtual DbSet<Employees> Employees { get; set; }
@@ -29,17 +27,9 @@ namespace Project0.DataAccess.Entities
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasDefaultSchema("Customer");
-           // modelBuilder.Entity<Customers>()
-                //.ToTable("Customers", schema: "Customer");
-            //base.OnModelCreating(modelBuilder);
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-
             modelBuilder.Entity<CustomerFeedback>(entity =>
             {
                 entity.HasNoKey();
-
-                entity.ToTable("CustomerFeedback", "Customer");
 
                 entity.Property(e => e.CustomerFeedback1)
                     .HasColumnName("CustomerFeedback")
@@ -58,17 +48,13 @@ namespace Project0.DataAccess.Entities
                     .HasConstraintName("StoreReviewed_to_Store_FK");
             });
 
-           // modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Entity<Customers>(entity =>
             {
                 entity.HasKey(e => e.CustomerIndex)
-                    .HasName("PK__Customer__E13BA8A5C92709EE");
-
-                //entity.ToTable("Customers", "Customer");
-                //entity.ToTable("Customers");
+                    .HasName("PK__Customer__E13BA8A5177EA1CF");
 
                 entity.HasIndex(e => e.Email)
-                    .HasName("UQ__Customer__A9D10534C5426A87")
+                    .HasName("UQ__Customer__A9D10534B352A754")
                     .IsUnique();
 
                 entity.Property(e => e.City).HasMaxLength(100);
@@ -95,14 +81,12 @@ namespace Project0.DataAccess.Entities
             {
                 entity.HasNoKey();
 
-                entity.ToTable("EmployeeDetails", "Corporate");
-
                 entity.HasIndex(e => e.EmployeeEmail)
-                    .HasName("UQ__Employee__6E8498AAE46F7D11")
+                    .HasName("UQ__Employee__6E8498AA86993AA2")
                     .IsUnique();
 
                 entity.HasIndex(e => e.EmployeeId)
-                    .HasName("UQ__Employee__7AD04F10E2FEFAA5")
+                    .HasName("UQ__Employee__7AD04F103BC70A2E")
                     .IsUnique();
 
                 entity.Property(e => e.EmployeeCity).HasMaxLength(100);
@@ -127,9 +111,7 @@ namespace Project0.DataAccess.Entities
             modelBuilder.Entity<Employees>(entity =>
             {
                 entity.HasKey(e => e.EmployeeId)
-                    .HasName("PK__Employee__7AD04F111EAA3867");
-
-                entity.ToTable("Employees", "Corporate");
+                    .HasName("PK__Employee__7AD04F11F6251CCD");
 
                 entity.Property(e => e.FirstName).HasMaxLength(100);
 
@@ -154,9 +136,7 @@ namespace Project0.DataAccess.Entities
             modelBuilder.Entity<ItemList>(entity =>
             {
                 entity.HasKey(e => e.ItemIndex)
-                    .HasName("PK__ItemList__E592800B7B90F5B9");
-
-                entity.ToTable("ItemList", "Corporate");
+                    .HasName("PK__ItemList__E592800B77D771AD");
 
                 entity.Property(e => e.ItemDescription).HasMaxLength(255);
 
@@ -181,9 +161,7 @@ namespace Project0.DataAccess.Entities
             modelBuilder.Entity<OrderInvoice>(entity =>
             {
                 entity.HasKey(e => e.InvoiceLineNumber)
-                    .HasName("PK__OrderInv__93DD967F1FD21862");
-
-                entity.ToTable("OrderInvoice", "Corporate");
+                    .HasName("PK__OrderInv__93DD967FC47CDB4E");
 
                 entity.HasOne(d => d.Item)
                     .WithMany(p => p.OrderInvoice)
@@ -199,9 +177,7 @@ namespace Project0.DataAccess.Entities
             modelBuilder.Entity<Orders>(entity =>
             {
                 entity.HasKey(e => e.OrderIndex)
-                    .HasName("PK__Orders__4956F17F4B4AEB53");
-
-                entity.ToTable("Orders", "Corporate");
+                    .HasName("PK__Orders__4956F17FC533FBB0");
 
                 entity.Property(e => e.OrderDateTime)
                     .HasColumnType("smalldatetime")
@@ -216,14 +192,18 @@ namespace Project0.DataAccess.Entities
                 entity.Property(e => e.OrderStatusDate)
                     .HasColumnType("smalldatetime")
                     .HasDefaultValueSql("(getutcdate())");
+
+                entity.HasOne(d => d.Customer)
+                    .WithMany(p => p.Orders)
+                    .HasForeignKey(d => d.CustomerId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("Customer_to_Order_FK");
             });
 
             modelBuilder.Entity<Stores>(entity =>
             {
                 entity.HasKey(e => e.StoreId)
-                    .HasName("PK__Stores__3B82F101218A36BC");
-
-                entity.ToTable("Stores", "Corporate");
+                    .HasName("PK__Stores__3B82F10134B00C34");
 
                 entity.Property(e => e.StoreId).ValueGeneratedNever();
 
@@ -243,16 +223,14 @@ namespace Project0.DataAccess.Entities
             modelBuilder.Entity<VendorList>(entity =>
             {
                 entity.HasKey(e => e.VendorIndex)
-                    .HasName("PK__VendorLi__A62AB120501705AB");
-
-                entity.ToTable("VendorList", "Corporate");
+                    .HasName("PK__VendorLi__A62AB120BFC5D940");
 
                 entity.HasIndex(e => e.VendorEmail)
-                    .HasName("UQ__VendorLi__F0E72A77CAAF4E68")
+                    .HasName("UQ__VendorLi__F0E72A77038A230B")
                     .IsUnique();
 
                 entity.HasIndex(e => e.VendorName)
-                    .HasName("UQ__VendorLi__7320A357BA4AA607")
+                    .HasName("UQ__VendorLi__7320A357103EE2D2")
                     .IsUnique();
 
                 entity.Property(e => e.VendorCity).HasMaxLength(100);
