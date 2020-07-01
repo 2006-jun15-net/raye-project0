@@ -19,4 +19,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLibrary\BusinessLibrary.csproj" />
+    <ProjectReference Include="..\Project0.app\Project0.app.csproj" />
+    <ProjectReference Include="..\Project0.DataAccess\Project0.DataAccess.csproj" />
+  </ItemGroup>
+
 </Project>

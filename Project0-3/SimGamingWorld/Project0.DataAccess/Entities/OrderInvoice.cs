@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Project0.DataAccess.Enities
+namespace Project0.DataAccess.Entities
 {
     public partial class OrderInvoice
     {

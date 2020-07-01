@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Project0.DataAccess.Enities
+namespace Project0.DataAccess.Entities
 {
     public partial class ItemList
     {
         public ItemList()
         {
             OrderInvoice = new HashSet<OrderInvoice>();
+            StoreInventory = new HashSet<StoreInventory>();
         }
 
         public int ItemIndex { get; set; }
@@ -18,5 +19,6 @@ namespace Project0.DataAccess.Enities
 
         public virtual VendorList ItemVendorNavigation { get; set; }
         public virtual ICollection<OrderInvoice> OrderInvoice { get; set; }
+        public virtual ICollection<StoreInventory> StoreInventory { get; set; }
     }
 }

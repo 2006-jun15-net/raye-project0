@@ -98,6 +98,13 @@ CREATE TABLE CustomerFeedback (CustomerIndex INT CONSTRAINT CustomerIndex_to_Cus
 	CustomerFeedback NVARCHAR(500),
 	CHECK ((CustomerRating >= 0) AND (CustomerRating <=10)))
 
+--DROP TABLE StoreInventory
+CREATE TABLE StoreInventory (StoreInventory_PK INT PRIMARY KEY IDENTITY(1,1),
+	StoreNumber INT DEFAULT 51 CONSTRAINT StoreNumber_Store_FK FOREIGN KEY REFERENCES Stores(StoreId) ON UPDATE CASCADE ON DELETE SET DEFAULT,
+	ItemId INT NOT NULL CONSTRAINT ItemId_ItemList_FK FOREIGN KEY REFERENCES ItemList(ItemIndex) ON UPDATE CASCADE ON DELETE CASCADE,
+	Quantity INT CHECK (Quantity >=0))
+GO
+
 --DROP TABLE Customer.Orders
 --CREATE TABLE Customer.Orders (OrderIndex CHAR CONSTRAINT Customer_to_Orders_FK FOREIGN KEY REFERENCES Corporate.Orders(OrderId),
 --	InvoiceLineNumber INT CONSTRAINT LineNumber_to_OrderId_FK FOREIGN KEY REFERENCES Corporate.OrderInvoice (InvoiceLineNumber))
@@ -111,6 +118,8 @@ ALTER TABLE Stores ADD CONSTRAINT Store_to_Manager_FK
 
 ALTER TABLE Orders ADD CONSTRAINT Customer_to_Order_FK FOREIGN KEY
 	(CustomerId) REFERENCES Customers(CustomerIndex)
+
+--ALTER TABLE StoreInventory (ItemId) CONSTRAINT NOT NULL
 GO
 
 --CREATE TRIGGER UpdateOrderStatusDate ON Corporate.Orders AFTER UPDATE AS 

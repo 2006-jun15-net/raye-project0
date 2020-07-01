@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Project0.DataAccess.Enities
+namespace Project0.DataAccess.Entities
 {
     public partial class Project0Context : DbContext
     {
@@ -22,8 +22,18 @@ namespace Project0.DataAccess.Enities
         public virtual DbSet<ItemList> ItemList { get; set; }
         public virtual DbSet<OrderInvoice> OrderInvoice { get; set; }
         public virtual DbSet<Orders> Orders { get; set; }
+        public virtual DbSet<StoreInventory> StoreInventory { get; set; }
         public virtual DbSet<Stores> Stores { get; set; }
         public virtual DbSet<VendorList> VendorList { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Server=tcp:revature-2006-dotnet-rayeichler.database.windows.net,1433;Initial Catalog=Project0;Persist Security Info=False;User ID=ray.eichler;Password=Elkins04;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            }
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -198,6 +208,26 @@ namespace Project0.DataAccess.Enities
                     .HasForeignKey(d => d.CustomerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("Customer_to_Order_FK");
+            });
+
+            modelBuilder.Entity<StoreInventory>(entity =>
+            {
+                entity.HasKey(e => e.StoreInventoryPk)
+                    .HasName("PK__StoreInv__2247500A14A6272A");
+
+                entity.Property(e => e.StoreInventoryPk).HasColumnName("StoreInventory_PK");
+
+                entity.Property(e => e.StoreNumber).HasDefaultValueSql("((51))");
+
+                entity.HasOne(d => d.Item)
+                    .WithMany(p => p.StoreInventory)
+                    .HasForeignKey(d => d.ItemId)
+                    .HasConstraintName("ItemId_ItemList_FK");
+
+                entity.HasOne(d => d.StoreNumberNavigation)
+                    .WithMany(p => p.StoreInventory)
+                    .HasForeignKey(d => d.StoreNumber)
+                    .HasConstraintName("StoreNumber_Store_FK");
             });
 
             modelBuilder.Entity<Stores>(entity =>
